@@ -3,13 +3,18 @@ import "./style.css";
 import Button from "../Button/index.astro";
 ---
 
-<section class="glass-card text-primary rounded-xl sm:p-6 flex flex-col justify-between">
-  <h1 class="text-[32px] md:text-[42px] leading-12 font-bold">
-    Let's build it
-    <span class="text-green-400 font-normal text-focus">
-      together!
-    </span>
-  </h1>
+<section class="glass-card call-to-action text-primary relative rounded-xl sm:p-6 flex flex-col justify-between">
+  <div class="space-y-4">
+    <h1 class="text-[32px] md:text-[42px] leading-12 font-bold">
+      Let's build it
+      <span class="text-green-400 font-normal text-focus">
+        together!
+      </span>
+    </h1>
+    <div class="w-24">
+      <img src={"/images/message.png"} alt="Call to Action" class="w-full h-full object-cover" />
+    </div>
+  </div>
   <div class="flex justify-end">
     <Button>
       Contact me

@@ -1,3 +1,16 @@
 .text-focus {
   font-family: 'Consolas', sans-serif;
 }
+
+.call-to-action::before {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 32px;
+  right: 32px;
+  width: 120px;
+  height: 120px;
+  filter: blur(80px);
+  border-radius: 9999px;
+  background-color: green;
+}
