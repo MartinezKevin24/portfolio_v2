@@ -1,0 +1,31 @@
+---
+import "./style.css";
+import angular from "../../assets/icons/angular.png";
+---
+
+<section class="w-full col-span-2 container-card relative text-primary group cursor-default glass-card rounded-xl overflow-clip">
+  <div class="w-full h-full p-4 container-text-code rounded-xl flex items-center justify-center">
+    <p class="text-5xl font-bold text-code">{"<code/>"}</p>
+  </div>
+  <div class="absolute top-0 -left-2 rotate-12 opacity-40 z-[-1]">
+    <span class="icon-css3 text-5xl text-blue-500 group-hover:text-4xl transition-all"></span>
+  </div>
+  <div class="absolute -bottom-2 right-8 rotate-45 opacity-40 z-[-1]">
+    <span class="icon-react text-6xl text-blue-300 group-hover:text-5xl transition-all"></span>
+  </div>
+  <div class="absolute bottom-10 left-12 z-[-1] opacity-45 -rotate-12">
+    <span class="icon-javascript text-4xl text-yellow-500 group-hover:text-3xl transition-all"></span>
+  </div>
+  <div class="absolute top-3 -right-2 rotate-12 z-[-1] opacity-45">
+    <span class="icon-next-dot-js text-5xl text-black group-hover:text-6xl transition-all"></span>
+  </div>
+  <div class="absolute -top-4 right-4/12 -rotate-20 z-[-1] opacity-45">
+    <img src={angular.src} alt="Angular" class="w-20 h-20 group-hover:w-16 group-hover:h-16 transition-all" />
+  </div>
+  <div class="absolute bottom-2 left-5/12 z-[-1] opacity-45 rotate-12">
+    <span class="icon-html-five text-4xl text-orange-400 group-hover:text-6xl transition-all"></span>
+  </div>
+  <div class="absolute -bottom-2 -left-2 z-[-1] opacity-45 rotate-20">
+    <span class="icon-typescript text-4xl text-blue-500 group-hover:text-5xl transition-all"></span>
+  </div>
+</section>

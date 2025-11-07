@@ -1,0 +1,79 @@
+/* Base (simula cómo Tailwind define sus ring vars) */
+*, ::before, ::after {
+  --tw-inset-ring-color: rgba(0, 0, 0, 0.295);
+  --tw-inset-ring-shadow: 0 0 #0000;
+  --tw-inset-shadow: 0 0 #0000;
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+}
+
+
+.presentation::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: -100px;
+  border-radius: 100%;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(71, 165, 71, 0.582);
+  z-index: -1;
+  filter: blur(120px);
+  box-shadow: 0 0 10px 0 rgb(8, 158, 8);
+
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: -50px;
+    filter: blur(80px);
+  }
+}
+
+.presentation::before {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  border-radius: 100%;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: rgba(71, 165, 71, 0.582);
+  z-index: -1;
+  filter: blur(80px);
+  box-shadow: 0 0 10px 0 rgb(8, 158, 8);
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+    right: -50px;
+    filter: blur(50px);
+  }
+  
+}
+
+.memoji-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 8rem;   /* w-32 */
+  height: 8rem;  /* h-32 */
+  background-color: #dcfce7d0; /* bg-green-100 */
+  border-radius: 9999px; /* rounded-full */
+  z-index: 0;
+
+  --tw-inset-ring-shadow: inset 0 0 6px 4px var(--tw-inset-ring-color, #00000049);
+  box-shadow:
+    var(--tw-inset-shadow),
+    var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow),
+    var(--tw-ring-shadow),
+    var(--tw-shadow);
+
+  /* Opción A: sombra interior uniforme (alrededor de todo el borde) */
+  /* box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.3); */
+}

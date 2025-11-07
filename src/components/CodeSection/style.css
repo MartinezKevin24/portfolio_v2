@@ -1,0 +1,16 @@
+.text-code {
+  font-family: 'Consolas', sans-serif;
+  background: linear-gradient(to right, #d6cc3b, #4fbb4f);
+  background-clip: text;
+  -webkit-background-clip: text; /* necesario para Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .container-card {
+  border: none;
+} */
+
+.container-text-code {
+  /* background: rgb(168, 219, 145); */
+}

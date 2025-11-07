@@ -1,0 +1,14 @@
+.linkedin-container::before {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  filter: blur(50px);
+  height: 80px;
+  background-color: rgb(99, 101, 248);
+  border-radius: 100%;
+}

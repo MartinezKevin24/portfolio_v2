@@ -1,7 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+@import '../assets/fonts/icomoon/style.css';
+
+@theme {
+  --color-primary: #d8d6d6;
+  --color-secondary: #171625;
+}
 
 * {
   font-family: 'Roboto', sans-serif;
-  color: #2e2e2e;
+}
+
+body {
+  background: #171625;
+}
+
+.glass-card {
+  background: rgba(110, 110, 110, 0.356);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(41px);
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  /* overflow: clip; */
+  border: 1px solid rgba(255, 255, 255, 0.308);
 }

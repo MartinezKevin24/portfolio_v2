@@ -1,18 +1,14 @@
 ---
 import heart from "../../assets/memoji_heart.webp";
-import party from "../../assets/memoji_party.webp";
-import working from "../../assets/memoji_working.webp";
+import hello from "../../assets/memoji_hi.webp";
+import "./styles.css";
 ---
 
-<section class="w-full grid grid-cols-3 gap-4">
-  <div class="group col-span-2 bg-[#b3eec8] space-y-4 p-6 rounded-xl border-[#60b37d] border-4">
-    <img src={heart.src} alt="Presenta" class="w-36 h-36 group-hover:hidden group-hover:scale-110 transition-all duration-300" />
-    <img src={party.src} alt="Presenta" class="w-36 h-36 hidden group-hover:block group-hover:scale-110 transition-all duration-300" />
-    <h1 class="text-3xl font-bold">Aló, welcome!</h1>
-    <p class="text-lg">I'm <strong>Kevin Martínez</strong>, a front-end developer. I love upbeat music, dancing, board games, and video games.</p>
+<div class="group glass-card text-primary relative space-y-4 p-6 rounded-xl presentation col-span-1 md:col-span-2">
+  <div class="flex items-end memoji-container justify-center relative w-32 h-40 rounded-b-full overflow-clip">
+    <img src={heart.src} alt="Presenta" class="w-40 z-1 shrink-0 object-cover h-40 group-hover:hidden group-hover:scale-110 transition-all duration-300" />
+    <img src={hello.src} alt="Presenta" class="w-[158px] z-1 shrink-0 object-cover h-[158px] -mb-3 hidden group-hover:block group-hover:scale-110 transition-all duration-300" />
   </div>
-  <div class="bg-[#9dc7ed] flex flex-col items-center justify-start p-6 rounded-xl relative border-[#2f74b5] border-4">
-    <h2 class="text-4xl font-black">CV / Resume</h2>
-    <img src={working.src} alt="Working" class="w-56 h-56 absolute bottom-0" />
-  </div>
-</section>
+  <h1 class="text-3xl font-bold text-green-500">Aló, welcome!</h1>
+  <p class="text-lg">I'm <strong>Kevin Martínez</strong>, a front-end developer. I love upbeat music, dancing, board games, and video games.</p>
+</div>

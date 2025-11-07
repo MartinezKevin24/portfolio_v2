@@ -1,8 +1,26 @@
 ---
 import Layout from "../layout/index.astro";
 import Presentation from "../components/Presentation/index.astro";
+import Location from "../components/Location/index.astro";
+import LinkedinBtn from "../components/LinkedinBtn/index.astro";
+import GithubBtn from "../components/GithubBtn/index.astro";
+import CodeSection from "../components/CodeSection/index.astro";
+import CallToAction from "../components/CallToAction/index.astro";
+import Resume from "../components/Resume/index.astro";
 ---
 
 <Layout>
-	<Presentation />
+	<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
+		<Presentation />
+		<Resume />
+	</div>
+	<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
+		<Location />
+		<section class="w-full grid grid-cols-2 grid-rows-2 gap-4">
+			<LinkedinBtn />
+			<GithubBtn />
+			<CodeSection />
+		</section>
+		<CallToAction />
+	</div>
 </Layout>

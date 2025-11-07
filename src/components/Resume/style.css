@@ -1,0 +1,20 @@
+.resume::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: -50%;
+  border-radius: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 300px;
+  background: rgba(71, 77, 165, 0.808);
+  z-index: -1;
+  filter: blur(120px);
+  box-shadow: 0 0 10px 0 rgb(8, 158, 8);
+
+  @media (max-width: 768px) {
+    height: 300px;
+    filter: blur(100px);
+  }
+}
