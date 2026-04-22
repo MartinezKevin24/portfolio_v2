@@ -17,6 +17,7 @@
   width: 150px;
   filter: blur(150px);
   height: 150px;
+  opacity: 0.7;
   background-color: yellow;
   border-radius: 100%;
 }
@@ -47,7 +48,7 @@
   border-top-left-radius: 12px;
 }
 
-.label-card > div::before {
+/* .label-card > div::before {
   content: "";
   position: absolute;
   display: block;
@@ -60,4 +61,4 @@
   height: 60px;
   background-color: rgb(117, 52, 52);
   border-radius: 100%;
-}
+} */

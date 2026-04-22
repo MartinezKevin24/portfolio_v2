@@ -14,3 +14,22 @@
   border-radius: 9999px;
   background-color: green;
 }
+
+.glass-card:hover {
+  .animation-message {
+    animation: message-animation 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@keyframes message-animation {
+  0% {
+    transform: translate3d(0, 12px, 0) scale(0.94);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}

@@ -3,7 +3,9 @@ import "./style.css";
 import Button from "../Button/index.astro";
 ---
 
-<section class="glass-card call-to-action text-primary relative rounded-xl sm:p-6 flex flex-col justify-between">
+<section 
+  class="glass-card call-to-action text-primary relative rounded-xl sm:p-6 flex flex-col justify-between"
+  id="call-to-action">
   <div class="space-y-4">
     <h1 class="text-[32px] md:text-[42px] leading-12 font-bold">
       Let's build it
@@ -11,8 +13,13 @@ import Button from "../Button/index.astro";
         together!
       </span>
     </h1>
-    <div class="w-24">
-      <img src={"/images/message.png"} alt="Call to Action" class="w-full h-full object-cover" />
+    <div class="w-full relative">
+      <div class="w-full">
+        <img src={"/images/message.png"} alt="Call to Action" class="w-fit h-[41px] object-contain" />
+      </div>
+      <div class="w-full flex h-10 justify-end relative">
+        <img src={"/images/response.png"} alt="Response message" class="w-fit animation-message absolute opacity-0 h-10 object-contain" />
+      </div>
     </div>
   </div>
   <div class="flex justify-end">
@@ -21,3 +28,11 @@ import Button from "../Button/index.astro";
     </Button>
   </div>
 </section>
+
+<script> 
+  const callToAction = document.getElementById('call-to-action');
+  callToAction?.addEventListener('mouseenter', () => {
+    const audio = new Audio('/sounds/ios_message.mp3');
+    audio.play();
+  })
+</script>
