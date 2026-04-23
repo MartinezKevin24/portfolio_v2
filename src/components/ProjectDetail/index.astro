@@ -9,27 +9,32 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const lang = (Astro.currentLocale ?? 'es') as Lang;
+const lang = (Astro.currentLocale ?? "es") as Lang;
 const t = useTranslations(lang);
-const backHref = lang === 'en' ? '/en' : '/';
+const backHref = lang === "en" ? "/en" : "/";
 ---
 
 <div class="w-full max-w-[1050px] space-y-4">
-
   <!-- Back -->
   <a
     href={backHref}
     class="inline-flex items-center gap-2 text-sm text-primary/60 hover:text-green-400 transition-colors duration-200 font-medium"
   >
-    {t('project.back')}
+    {t("project.back")}
   </a>
 
   <!-- Hero -->
   <div class="glass-card project-hero rounded-xl p-6 md:p-8 relative">
-    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+    <div
+      class="flex flex-col md:flex-row md:items-start md:justify-between gap-4"
+    >
       <div class="space-y-2">
-        <h1 class="text-4xl md:text-5xl font-black text-primary">{project.name}</h1>
-        <span class="inline-block glass-card rounded-full px-3 py-1 text-xs font-semibold text-green-400 border-green-400/30">
+        <h1 class="text-4xl md:text-5xl font-black text-primary">
+          {project.name}
+        </h1>
+        <span
+          class="inline-block glass-card rounded-full px-3 py-1 text-xs font-semibold text-green-400 border-green-400/30"
+        >
           {project.role[lang]}
         </span>
       </div>
@@ -39,14 +44,13 @@ const backHref = lang === 'en' ? '/en' : '/';
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 glass-card rounded-full px-5 py-2.5 text-sm font-bold text-green-400 hover:border-green-400/60 hover:bg-green-400/10 transition-all duration-200 self-start"
       >
-        {t('project.visit')}
+        {t("project.visit")}
       </a>
     </div>
   </div>
 
   <!-- Description + Tech Stack -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
     <div class="glass-card rounded-xl p-6 md:col-span-2 space-y-2">
       <p class="text-primary/70 leading-relaxed text-base">
         {project.description[lang]}
@@ -54,42 +58,52 @@ const backHref = lang === 'en' ? '/en' : '/';
     </div>
 
     <div class="glass-card rounded-xl p-6 space-y-3">
-      <h2 class="text-xs font-bold text-primary/40 uppercase tracking-widest">{t('project.tech')}</h2>
+      <h2 class="text-xs font-bold text-primary/40 uppercase tracking-widest">
+        {t("project.tech")}
+      </h2>
       <div class="flex flex-wrap gap-2">
-        {project.tech.map((tag) => (
-          <span class="tech-tag rounded-full px-3 py-1 text-xs font-medium text-primary/80">
-            {tag}
-          </span>
-        ))}
+        {
+          project.tech.map((tag) => (
+            <span class="tech-tag rounded-full px-3 py-1 text-xs font-medium text-primary/80">
+              {tag}
+            </span>
+          ))
+        }
       </div>
     </div>
-
   </div>
 
   <!-- Highlights -->
   <div class="glass-card rounded-xl p-6 space-y-4">
-    <h2 class="text-xs font-bold text-primary/40 uppercase tracking-widest">{t('project.highlights')}</h2>
+    <h2 class="text-xs font-bold text-primary/40 uppercase tracking-widest">
+      {t("project.highlights")}
+    </h2>
     <ul class="space-y-3">
-      {project.highlights[lang].map((item) => (
-        <li class="highlight-item flex items-start gap-3 text-primary/80 text-sm leading-relaxed">
-          {item}
-        </li>
-      ))}
+      {
+        project.highlights[lang].map((item) => (
+          <li class="highlight-item flex items-start gap-3 text-primary/80 text-sm leading-relaxed">
+            {item}
+          </li>
+        ))
+      }
     </ul>
   </div>
 
   <!-- Images -->
-  {project.images.length > 0 && (
-    <div class="space-y-3">
-      <h2 class="text-xs font-bold text-primary/40 uppercase tracking-widest px-1">{t('project.images')}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {project.images.map((img) => (
-          <div class="image-card glass-card rounded-xl">
-            <img src={img.src} alt={img.alt} loading="lazy" />
-          </div>
-        ))}
+  {
+    project.images.length > 0 && (
+      <div class="space-y-3">
+        <h2 class="text-xs font-bold text-primary/40 uppercase tracking-widest px-1">
+          {t("project.images")}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {project.images.map((img) => (
+            <div class="image-card glass-card rounded-xl">
+              <img src={img.src} alt={img.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  )}
-
+    )
+  }
 </div>

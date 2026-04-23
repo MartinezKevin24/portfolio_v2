@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?cwcgx9');
-  src:  url('fonts/icomoon.eot?cwcgx9#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?cwcgx9') format('truetype'),
-    url('fonts/icomoon.woff?cwcgx9') format('woff'),
-    url('fonts/icomoon.svg?cwcgx9#icomoon') format('svg');
+  font-family: "icomoon";
+  src:
+    url("fonts/portfolio.woff2") format("woff2"),
+    url("fonts/portfolio.woff") format("woff"),
+    url("fonts/portfolio.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: "icomoon" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -168,4 +168,28 @@
 }
 .icon-git:before {
   content: "\eae7";
+}
+.icon-redis:before {
+  content: "\f000";
+}
+.icon-angular:before {
+  content: "\f001";
+}
+.icon-postgresql:before {
+  content: "\f002";
+}
+.icon-nestjs:before {
+  content: "\f003";
+}
+.icon-dotnet:before {
+  content: "\f004";
+}
+.icon-bash:before {
+  content: "\f005";
+}
+.icon-astro:before {
+  content: "\f006";
+}
+.icon-jotai:before {
+  content: "\f007";
 }

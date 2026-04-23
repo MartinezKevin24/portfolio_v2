@@ -1,5 +1,5 @@
 .text-code {
-  font-family: 'Consolas', sans-serif;
+  font-family: "Consolas", sans-serif;
   background: linear-gradient(to right, #d6cc3b, #4fbb4f);
   background-clip: text;
   -webkit-background-clip: text; /* necesario para Safari/Chrome */

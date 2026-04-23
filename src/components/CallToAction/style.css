@@ -1,9 +1,9 @@
 .text-focus {
-  font-family: 'Consolas', sans-serif;
+  font-family: "Consolas", sans-serif;
 }
 
 .call-to-action::before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   bottom: 32px;

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
-@import '../assets/fonts/icomoon/style.css';
+@import "../assets/fonts/icomoon/style.css";
 
 @theme {
   --color-primary: #d8d6d6;
@@ -8,7 +8,7 @@
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 html {
@@ -28,4 +28,53 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   /* overflow: clip; */
   border: 1px solid rgba(255, 255, 255, 0.308);
+}
+
+.tech-pill {
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid;
+  line-height: 1;
+}
+
+.tech-nextjs {
+  color: #e5e7eb;
+  border-color: #6b7280;
+  background: rgba(75, 85, 99, 0.28);
+}
+
+.tech-react {
+  color: #7dd3fc;
+  border-color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.2);
+}
+
+.tech-typescript {
+  color: #93c5fd;
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.tech-tailwind {
+  color: #5eead4;
+  border-color: #14b8a6;
+  background: rgba(20, 184, 166, 0.2);
+}
+
+.tech-jotai {
+  color: #f9a8d4;
+  border-color: #ec4899;
+  background: rgba(236, 72, 153, 0.2);
+}
+
+.tech-redis {
+  color: #fca5a5;
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.tech-default {
+  color: #d1d5db;
+  border-color: #9ca3af;
+  background: rgba(156, 163, 175, 0.2);
 }

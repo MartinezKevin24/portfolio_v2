@@ -3,7 +3,7 @@
 }
 
 .project-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -80px;
   left: -80px;
@@ -19,7 +19,9 @@
 .tech-tag {
   background: rgba(110, 110, 110, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: border-color 0.2s, color 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .tech-tag:hover {
@@ -28,7 +30,7 @@
 }
 
 .highlight-item::before {
-  content: '';
+  content: "";
   display: block;
   width: 6px;
   height: 6px;

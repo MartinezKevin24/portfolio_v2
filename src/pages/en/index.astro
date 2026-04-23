@@ -7,35 +7,51 @@ import GithubBtn from "../../components/GithubBtn/index.astro";
 import CodeSection from "../../components/CodeSection/index.astro";
 import CallToAction from "../../components/CallToAction/index.astro";
 import Resume from "../../components/Resume/index.astro";
+import { useTranslations } from "../../i18n/index";
+import type { Lang } from "../../i18n/index";
+import Projects from "../../components/Projects/index.astro";
+
+const lang = (Astro.currentLocale ?? "es") as Lang;
+const t = useTranslations(lang);
 ---
 
 <Layout>
-	<div class="relative z-0 w-full grid grid-cols-1 md:grid-cols-3 gap-4">
-		<div class="z-10 col-span-1 md:col-span-2">
-			<Presentation />
-		</div>
-		<div class="grid grid-cols-2 md:grid-cols-1 gap-4 h-[180px] md:h-full">
-			<Resume />
-			<div class="order-3 min-w-0 md:order-1 md:hidden block">
-				<Location/>
-			</div>
-		</div>
-	</div>
-	<div
-		class="relative z-10 w-full grid max-md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:grid-cols-3 gap-4"
-	>
-		<div class="order-3 min-w-0 md:order-1 hidden md:block">
-			<Location/>
-		</div>
-		<section
-			class="w-full min-w-0 order-2 col-span-2 md:col-span-1 md:order-2 min-h-[380px] md:min-h-full grid grid-cols-2 grid-rows-2 gap-4"
-		>
-			<LinkedinBtn />
-			<GithubBtn />
-			<CodeSection />
-		</section>
-		<div class="order-1 min-w-0 md:order-3 col-span-2 md:col-span-1">
-			<CallToAction />
-		</div>
-	</div>
+  <section class="space-y-4 w-full">
+    <div class="relative z-0 w-full grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="z-10 col-span-1 md:col-span-2">
+        <Presentation />
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-1 gap-4 h-[180px] md:h-full">
+        <Resume />
+        <div class="order-3 min-w-0 md:order-1 md:hidden block">
+          <Location />
+        </div>
+      </div>
+    </div>
+    <div
+      class="relative z-10 w-full grid max-md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:grid-cols-3 gap-4"
+    >
+      <div class="order-3 min-w-0 md:order-1 hidden md:block">
+        <Location />
+      </div>
+      <section
+        class="w-full min-w-0 order-2 col-span-2 md:col-span-1 md:order-2 min-h-[380px] md:min-h-full grid grid-cols-2 grid-rows-2 gap-4"
+      >
+        <LinkedinBtn />
+        <GithubBtn />
+        <CodeSection />
+      </section>
+      <div class="order-1 min-w-0 md:order-3 col-span-2 md:col-span-1">
+        <CallToAction />
+      </div>
+    </div>
+  </section>
+  <section class="space-y-4">
+    <h1 class="text-6xl w-fit font-bold text-primary">
+      {t("project.title.section")}
+    </h1>
+    <div>
+      <Projects />
+    </div>
+  </section>
 </Layout>

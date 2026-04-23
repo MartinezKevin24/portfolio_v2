@@ -3,19 +3,39 @@ import "./styles.css";
 import party from "../../assets/memoji_party.webp";
 ---
 
-<section class="w-full glass-card glass-card-map gap-4 h-full md:h-[318px] relative text-primary rounded-xl">
+<section
+  class="w-full glass-card glass-card-map gap-4 h-full md:h-[318px] relative text-primary rounded-xl"
+>
   <div class="relative h-full w-full overflow-clip map-container">
-    <div class="md:absolute h-full relative md:left-12 md:w-[500px] md:h-[318px] opacity-70">
-      <img src={"/images/map_desktop.png"} alt="Location" class="w-full h-full md:block hidden"/>
-      <img src={"/images/map_mobile.png"} alt="Location" class="w-full absolute object-cover bottom-0 right-0 h-full md:hidden block"/>
+    <div
+      class="md:absolute h-full relative md:left-12 md:w-[500px] md:h-[318px] opacity-70"
+    >
+      <img
+        src={"/images/map_desktop.png"}
+        alt="Location"
+        class="w-full h-full md:block hidden"
+      />
+      <img
+        src={"/images/map_mobile.png"}
+        alt="Location"
+        class="w-full absolute object-cover bottom-0 right-0 h-full md:hidden block"
+      />
     </div>
-    <div class="bg-green-300 h-10 w-10 rounded-full top-[18%] right-[52%] absolute border-2 border-green-100">
-      <img src={party.src} alt="Marker" class="w-full h-full object-contain p-1"/>
+    <div
+      class="bg-green-300 h-10 w-10 rounded-full top-[18%] right-[52%] absolute border-2 border-green-100"
+    >
+      <img
+        src={party.src}
+        alt="Marker"
+        class="w-full h-full object-contain p-1"
+      />
     </div>
   </div>
   <div class="label-card">
     <div class="glass-card relative">
-      <h2 class="text-[10px] md:text-xs text-primary font-bold">Cartagena, Colombia</h2>
+      <h2 class="text-[10px] md:text-xs text-primary font-bold">
+        Cartagena, Colombia
+      </h2>
     </div>
   </div>
 </section>
