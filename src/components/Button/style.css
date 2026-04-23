@@ -3,9 +3,9 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
   gap: 0.5rem;
-  width: fit-content;
+  width: 100%;
   color: rgb(46, 44, 44);
   padding: 4px 16px;
   border-radius: 9999px;
@@ -53,4 +53,18 @@
   font-size: 11px;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    padding: 3px 12px;
+    border-width: 2px;
+    gap: 0.35rem;
+  }
+
+  .icon-wrapper {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
 }

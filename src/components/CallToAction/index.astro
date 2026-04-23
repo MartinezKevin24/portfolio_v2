@@ -1,35 +1,41 @@
 ---
 import "./style.css";
 import Button from "../Button/index.astro";
+import { useTranslations } from "../../i18n/index";
+import type { Lang } from "../../i18n/index";
+
+const lang = (Astro.currentLocale ?? 'es') as Lang;
+const t = useTranslations(lang);
 ---
 
-<section 
-  class="glass-card call-to-action text-primary relative rounded-xl sm:p-6 flex flex-col justify-between"
-  id="call-to-action">
-  <div class="space-y-4">
-    <h1 class="text-[32px] md:text-[42px] leading-12 font-bold">
-      Let's build it
+<section
+  class="glass-card call-to-action text-primary h-[250px] md:h-[318px] relative w-full min-w-0 rounded-xl p-4 md:p-6 flex flex-col justify-between gap-2 sm:gap-3 md:gap-0"
+  id="call-to-action"
+>
+  <div class="min-w-0 space-y-3 md:space-y-4">
+    <h1 class="text-[32px] leading-tight md:text-[42px] md:leading-12 font-bold">
+      {t('cta.title')}
       <span class="text-green-400 font-normal text-focus">
-        together!
+        {t('cta.highlight')}
       </span>
     </h1>
     <div class="w-full relative">
       <div class="w-full">
-        <img src={"/images/message.png"} alt="Call to Action" class="w-fit h-[41px] object-contain" />
+        <img src={"/images/message.png"} alt="Call to Action" class="w-fit md:h-[41px] h-12 object-contain" />
       </div>
       <div class="w-full flex h-10 justify-end relative">
-        <img src={"/images/response.png"} alt="Response message" class="w-fit animation-message absolute opacity-0 h-10 object-contain" />
+        <img src={"/images/response.png"} alt="Response message" class="w-fit animation-message absolute opacity-0 md:h-10 h-12 object-contain" />
       </div>
     </div>
   </div>
-  <div class="flex justify-end">
+  <div class="mt-auto w-full">
     <Button>
-      Contact me
+      <span class="text-sm md:text-base">{t('cta.button')}</span>
     </Button>
   </div>
 </section>
 
-<script> 
+<script>
   const callToAction = document.getElementById('call-to-action');
   callToAction?.addEventListener('mouseenter', () => {
     const audio = new Audio('/sounds/ios_message.mp3');

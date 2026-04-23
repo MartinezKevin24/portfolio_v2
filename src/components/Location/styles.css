@@ -12,12 +12,12 @@
   position: absolute;
   display: block;
   z-index: -1;
-  bottom: 20px;
-  right: 20px;
+  bottom: 00px;
+  right: 00px;
   width: 150px;
-  filter: blur(150px);
-  height: 150px;
-  opacity: 0.7;
+  filter: blur(100px);
+  height: 170px;
+  opacity: 0.6;
   background-color: yellow;
   border-radius: 100%;
 }
@@ -25,17 +25,24 @@
 .label-card {
   background-color: var(--color-secondary);
   height: 40px;
-  width: 180px;
+  max-width: 100%;
+  width: min(11.25rem, 100%);
   border-radius: 0 0 var(--border-radius) 0;
   z-index: 1;
   position: absolute;
   border-top: 1px solid var(--color-secondary);
   border-left: 1px solid var(--color-secondary);
   top: -1px;
+  border-top-left-radius: 12px;
   left: -1px;
   border-right: 1px solid rgba(255, 255, 255, 0.308);
   border-bottom: 1px solid rgba(255, 255, 255, 0.308);
   box-shadow: inset -6px -6px 9px -2px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    width: fit-content;
+    padding-right: 8px;
+  }
 }
 
 .label-card > div {
@@ -46,6 +53,11 @@
   justify-content: center;
   border-bottom-right-radius: calc(var(--border-radius) - 8px);
   border-top-left-radius: 12px;
+
+  @media (max-width: 768px) {
+    width: fit-content;
+    padding: 0 8px;
+  }
 }
 
 /* .label-card > div::before {

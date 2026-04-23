@@ -1,0 +1,20 @@
+---
+import type { Lang } from "../../i18n/index";
+
+const lang = (Astro.currentLocale ?? 'es') as Lang;
+const currentPath = Astro.url.pathname;
+
+const altHref = lang === 'en'
+  ? currentPath.replace(/^\/en/, '') || '/'
+  : '/en' + (currentPath === '/' ? '' : currentPath);
+---
+
+<a
+  href={altHref}
+  class="lang-toggle glass-card rounded-full px-4 py-1.5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:border-green-400/60 transition-all duration-300"
+  aria-label="Switch language"
+>
+  <span class={lang === 'es' ? 'text-green-400' : 'text-primary/40'}>ES</span>
+  <span class="text-primary/25 font-light">|</span>
+  <span class={lang === 'en' ? 'text-green-400' : 'text-primary/40'}>EN</span>
+</a>

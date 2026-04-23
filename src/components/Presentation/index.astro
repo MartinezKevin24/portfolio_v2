@@ -2,6 +2,11 @@
 import heart from "../../assets/memoji_heart.webp";
 import hello from "../../assets/memoji_hi.webp";
 import "./styles.css";
+import { useTranslations } from "../../i18n/index";
+import type { Lang } from "../../i18n/index";
+
+const lang = (Astro.currentLocale ?? 'es') as Lang;
+const t = useTranslations(lang);
 ---
 
 <div class="group glass-card text-primary relative space-y-4 p-6 rounded-xl presentation col-span-1 md:col-span-2">
@@ -9,6 +14,6 @@ import "./styles.css";
     <img src={heart.src} alt="Presenta" class="w-40 z-1 shrink-0 object-cover h-40 group-hover:hidden group-hover:scale-110 transition-all duration-300" />
     <img src={hello.src} alt="Presenta" class="w-[158px] z-1 shrink-0 object-cover h-[158px] -mb-3 hidden group-hover:block group-hover:scale-110 transition-all duration-300" />
   </div>
-  <h1 class="text-3xl font-bold text-green-500">Aló, welcome!</h1>
-  <p class="text-lg">I'm <strong>Kevin Martínez</strong>, a front-end developer. I love upbeat music, dancing, board games, and video games.</p>
+  <h1 class="text-3xl font-bold text-green-500">{t('presentation.greeting')}</h1>
+  <p class="text-lg" set:html={t('presentation.bio')} />
 </div>

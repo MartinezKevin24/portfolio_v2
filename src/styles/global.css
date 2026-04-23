@@ -11,8 +11,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: #171625;
+  overflow-x: hidden;
 }
 
 .glass-card {
