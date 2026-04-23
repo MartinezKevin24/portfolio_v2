@@ -46,9 +46,13 @@ const t = useTranslations(lang);
 </section>
 
 <script>
+  const audio = new Audio("/sounds/ios_message.mp3");
+  audio.preload = "auto";
+  audio.load();
+
   const callToAction = document.getElementById("call-to-action");
   callToAction?.addEventListener("mouseenter", () => {
-    const audio = new Audio("/sounds/ios_message.mp3");
-    audio.play();
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
   });
 </script>

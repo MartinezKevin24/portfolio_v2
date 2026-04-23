@@ -1,5 +1,6 @@
 type ProjectPreview = {
   name: string;
+  slug?: string;
   description: { es: string; en: string };
   image_desktop: string;
   image_mobile: string;

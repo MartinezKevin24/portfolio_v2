@@ -52,7 +52,10 @@ const techClassMap: Record<string, string> = {
             <div class="space-y-2">
               <div class="flex items-center justify-between w-full">
                 <h2 class="font-bold text-4xl">
-                  <a href={project.url ?? undefined}>{project.name}</a>
+                  <a
+                    class="hover:text-green-300 transition-all duration-300"
+                    href={project.slug ? `${lang === "en" ? "/en" : ""}/projects/${project.slug}` : undefined}
+                  >{project.name}</a>
                 </h2>
                 {project.external_url && (
                   <a
