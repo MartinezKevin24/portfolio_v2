@@ -18,8 +18,13 @@
   filter: blur(100px);
   height: 170px;
   opacity: 0.6;
+  transition: opacity 300ms ease;
   background-color: yellow;
   border-radius: 100%;
+}
+
+.glass-card-map:hover::before {
+  opacity: 0.8;
 }
 
 .label-card {

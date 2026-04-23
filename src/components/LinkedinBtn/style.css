@@ -11,4 +11,10 @@
   height: 80px;
   background-color: rgb(99, 101, 248);
   border-radius: 100%;
+  opacity: 0.55;
+  transition: opacity 300ms ease;
+}
+
+.linkedin-container:hover::before {
+  opacity: 0.75;
 }

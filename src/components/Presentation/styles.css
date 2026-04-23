@@ -34,6 +34,8 @@
   filter: blur(120px);
   box-shadow: 0 0 10px 0 rgb(8, 158, 8);
   pointer-events: none;
+  opacity: 0.55;
+  transition: opacity 300ms ease;
 
   @media (max-width: 768px) {
     top: -32px;
@@ -58,12 +60,19 @@
   filter: blur(80px);
   box-shadow: 0 0 10px 0 rgb(8, 158, 8);
   pointer-events: none;
+  opacity: 0.55;
+  transition: opacity 300ms ease;
 
   @media (max-width: 768px) {
     width: 100px;
     height: 100px;
     filter: blur(50px);
   }
+}
+
+.presentation:hover::before,
+.presentation:hover::after {
+  opacity: 0.75;
 }
 
 .memoji-container::after {

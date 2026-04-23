@@ -6,13 +6,19 @@
   content: "";
   position: absolute;
   display: block;
-  bottom: 32px;
-  right: 32px;
-  width: 140px;
-  height: 140px;
-  filter: blur(80px);
+  bottom: -32px;
+  right: -32px;
+  width: 250px;
+  height: 250px;
+  filter: blur(130px);
   border-radius: 9999px;
   background-color: green;
+  opacity: 0.55;
+  transition: opacity 300ms ease;
+}
+
+.call-to-action:hover::before {
+  opacity: 0.75;
 }
 
 .glass-card:hover {

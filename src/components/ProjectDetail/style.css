@@ -14,6 +14,12 @@
   z-index: -1;
   filter: blur(100px);
   pointer-events: none;
+  opacity: 0.55;
+  transition: opacity 300ms ease;
+}
+
+.project-hero:hover::after {
+  opacity: 0.75;
 }
 
 .tech-tag {

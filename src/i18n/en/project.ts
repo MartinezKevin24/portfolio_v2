@@ -5,5 +5,5 @@ export const enProject = {
   "project.tech": "Tech Stack",
   "project.highlights": "What I did",
   "project.images": "Screenshots",
-  "project.title.section": "Projects",
+  "project.title.section": "Latest Projects",
 } as const;

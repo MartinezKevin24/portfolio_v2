@@ -3,6 +3,7 @@ import "./styles.css";
 import type { ProjectPreview } from "../../types/projects";
 import { projectsPreviews } from "../../data/projectsPreviews";
 import type { Lang } from "../../i18n/index";
+import Button from "../Button/index.astro";
 
 const lang = (Astro.currentLocale ?? "es") as Lang;
 
@@ -13,45 +14,73 @@ const techClassMap: Record<string, string> = {
   "Tailwind CSS": "tech-tailwind",
   Jotai: "tech-jotai",
   Redis: "tech-redis",
+  Angular: "tech-angular",
+  RxJS: "tech-rxjs",
+  MQTT: "tech-default",
+  "Node.js": "tech-node",
+  Recoil: "tech-recoil",
+  CSS: "tech-css",
 };
 ---
 
 <div class="grid grid-cols-1 gap-4 w-full">
   {
     projectsPreviews.map((project: ProjectPreview) => (
-      <a 
-        href={project.url} target="_blank" rel="noopener noreferrer" 
-        class="glass-card text-primary grid grid-cols-3 min-h-[340px] gap-8 group p-12 rounded-xl relative overflow-clip hover:bg-primary transition-all duration-300">
-        <div class="relative w-full h-full col-span-1 overflow-visible">
-          <div class="absolute flex items-center w-[470px] h-full right-0">
-            <img 
-            src={project.image_desktop} 
-            alt={project.name} 
-            class="w-full project-desktop-image shadow-lg rounded-xl"/>
-          </div>
-          <img 
-            src={project.image_mobile} 
-            alt={project.name} 
-            class="absolute project-mobile-image group-hover:-translate-y-10 transition-all duration-300 top-12 right-12 w-[200px] rounded-xl"/>
-        </div>
-        <div class="col-span-2 space-y-6 flex flex-col w-full justify-center">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between w-full">
-              <h2 class="font-bold text-4xl">{project.name}</h2>
-              <div
-                class="flex items-center w-10 h-10 group-hover:bg-primary transition-all duration-300 rounded-full justify-center">
-                <span class="icon-arrow-up-right2 text-primary group-hover:text-secondary transition-all duration-300"/>
-              </div>
+      <div
+        class="project-card-wrapper"
+        style={`--orb-color-1: ${project.colors[0]}; --orb-color-2: ${project.colors[1]};`}
+      >
+        <div
+          class="glass-card project-card text-primary grid grid-cols-3 min-h-[340px] gap-8 group p-12 rounded-xl relative overflow-clip hover:bg-primary transition-all duration-300"
+          style={!project.url ? "cursor: default;" : ""}
+        >
+          <div class="relative w-full h-full col-span-1 overflow-visible">
+            <div class="absolute flex items-center w-[470px] h-full right-0">
+              <img
+                src={project.image_desktop}
+                alt={project.name}
+                class={`w-full ${project.classes_images[0]} shadow-lg rounded-xl`}
+              />
             </div>
+            <img
+              src={project.image_mobile}
+              alt={project.name}
+              class={`${project.classes_images[1]}`}
+            />
+          </div>
+          <div class="col-span-2 space-y-6 flex flex-col w-full justify-center">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between w-full">
+                <h2 class="font-bold text-4xl">
+                  <a href={project.url ?? undefined}>{project.name}</a>
+                </h2>
+                {project.external_url && (
+                  <a
+                    href={project.external_url ?? undefined}
+                    target={project.external_url ? "_blank" : undefined}
+                    rel={
+                      project.external_url ? "noopener noreferrer" : undefined
+                    }
+                    class="flex items-center w-10 h-10 group-hover:bg-primary transition-all duration-300 rounded-full justify-center"
+                  >
+                    <span class="icon-arrow-up-right2 text-primary group-hover:text-secondary transition-all duration-300" />
+                  </a>
+                )}
+              </div>
               <ul class="flex flex-wrap items-center gap-2">
                 {project.tech_stack.map((tech) => (
-                  <li class={`tech-pill text-xs ${techClassMap[tech] ?? "tech-default"}`}>{tech}</li>
+                  <li
+                    class={`tech-pill text-xs ${techClassMap[tech] ?? "tech-default"}`}
+                  >
+                    {tech}
+                  </li>
                 ))}
               </ul>
+            </div>
+            <p>{project.description[lang]}</p>
           </div>
-          <p>{project.description[lang]}</p>
         </div>
-      </a>
+      </div>
     ))
   }
 </div>

@@ -5,7 +5,10 @@ type ProjectPreview = {
   image_mobile: string;
   tech_stack: string[];
   icons: string[];
-  url: string;
+  url?: string;
+  classes_images: string[];
+  colors: [string, string];
+  external_url?: string;
 };
 
 type ProjectDetail = {

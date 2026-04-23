@@ -5,5 +5,5 @@ export const esProject = {
   "project.tech": "Tecnologías",
   "project.highlights": "Lo que hice",
   "project.images": "Capturas",
-  "project.title.section": "Proyectos",
+  "project.title.section": "Ultimos proyectos",
 } as const;
