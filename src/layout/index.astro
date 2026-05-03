@@ -48,7 +48,10 @@ const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta name="description" content={pageDescription} />
     <meta name="author" content="Kevin Martínez" />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow"} />
+    <meta
+      name="robots"
+      content={noIndex ? "noindex, follow" : "index, follow"}
+    />
 
     <!-- Hreflang -->
     <link rel="alternate" hreflang="es" href={esUrl} />
@@ -65,7 +68,10 @@ const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content={ogImageUrl ? "summary_large_image" : "summary"} />
+    <meta
+      name="twitter:card"
+      content={ogImageUrl ? "summary_large_image" : "summary"}
+    />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
     {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
@@ -74,13 +80,17 @@ const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <link rel="icon" type="image/svg+xml" href="/favicon_memoji.webp" />
 
     <!-- JSON-LD -->
-    {jsonLdItems.map((schema) => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    ))}
+    {
+      jsonLdItems.map((schema) => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ))
+    }
   </head>
   <body>
     <div id="cursor-glow" aria-hidden="true"></div>
-    <div class="flex flex-col items-center md:py-12 py-6 px-4 min-h-screen relative z-10">
+    <div
+      class="flex flex-col items-center md:py-12 py-6 px-4 min-h-screen relative z-10"
+    >
       <div class="w-full max-w-[1050px] flex justify-between items-center mb-4">
         <Nav />
         <MobileNav />
@@ -93,7 +103,7 @@ const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
     <script is:inline>
       const hue = Math.floor(Math.random() * 360);
-      const glow = document.getElementById('cursor-glow');
+      const glow = document.getElementById("cursor-glow");
       glow.style.background = `hsl(${hue}, 80%, 60%)`;
 
       let tx = window.innerWidth / 2;
@@ -101,7 +111,7 @@ const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       let cx = tx;
       let cy = ty;
 
-      document.addEventListener('mousemove', (e) => {
+      document.addEventListener("mousemove", (e) => {
         tx = e.clientX;
         ty = e.clientY;
       });
@@ -109,8 +119,8 @@ const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       (function animate() {
         cx += (tx - cx) * 0.08;
         cy += (ty - cy) * 0.08;
-        glow.style.left = cx + 'px';
-        glow.style.top = cy + 'px';
+        glow.style.left = cx + "px";
+        glow.style.top = cy + "px";
         requestAnimationFrame(animate);
       })();
     </script>

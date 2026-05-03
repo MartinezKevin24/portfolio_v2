@@ -11,7 +11,8 @@ interface Props {
   customClass?: string;
 }
 
-const { href, name, icon, role, description, readMoreLabel, customClass } = Astro.props;
+const { href, name, icon, role, description, readMoreLabel, customClass } =
+  Astro.props;
 ---
 
 <a
@@ -23,7 +24,11 @@ const { href, name, icon, role, description, readMoreLabel, customClass } = Astr
       {
         icon ? (
           <div class="w-14 h-14 rounded-lg overflow-clip">
-            <img src={icon} alt={name + " icon"} class="w-full h-full object-contain" />
+            <img
+              src={icon}
+              alt={name + " icon"}
+              class="w-full h-full object-contain"
+            />
           </div>
         ) : (
           <span class="w-14 h-14 rounded-lg overflow-clip bg-gray-500 block" />
@@ -42,7 +47,9 @@ const { href, name, icon, role, description, readMoreLabel, customClass } = Astr
       {description}
     </p>
   </div>
-  <div class="px-4 py-[6px] flex justify-center items-center bg-blue-500/20 hover:bg-blue-500/30 transition duration-200 rounded-full">
+  <div
+    class="px-4 py-[6px] flex justify-center items-center bg-blue-500/20 hover:bg-blue-500/30 transition duration-200 rounded-full"
+  >
     <span class="text-[#007dfb] text-xs font-bold">
       {readMoreLabel}
     </span>

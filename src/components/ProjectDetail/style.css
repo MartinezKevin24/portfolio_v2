@@ -1,76 +1,9 @@
-.detail-glow {
-  position: fixed;
-  border-radius: 9999px;
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(130px);
-}
-
-.detail-glow--1 {
-  width: 400px;
-  height: 400px;
-  top: 10%;
-  left: -80px;
-  background: #2b55ff;
-  opacity: 0.45;
-}
-
-.detail-glow--2 {
-  width: 300px;
-  height: 300px;
-  top: 15%;
-  right: -60px;
-  background: #c62bff;
-  opacity: 0.4;
-}
-
-.detail-glow--3 {
-  width: 340px;
-  height: 340px;
-  bottom: 22%;
-  left: -70px;
-  background: #c62bff;
-  opacity: 0.3;
-}
-
-.detail-glow--4 {
-  width: 260px;
-  height: 260px;
-  bottom: 10%;
-  right: -50px;
-  background: #2b55ff;
-  opacity: 0.35;
-}
-
-@media (max-width: 768px) {
-  .detail-glow--1 {
-    width: 180px;
-    height: 180px;
-    left: -50px;
-  }
-
-  .detail-glow--2 {
-    width: 140px;
-    height: 140px;
-    right: -40px;
-  }
-
-  .detail-glow--3 {
-    width: 160px;
-    height: 160px;
-    left: -45px;
-  }
-
-  .detail-glow--4 {
-    width: 120px;
-    height: 120px;
-    right: -35px;
-  }
-}
 
 .highlight-card {
   background: rgba(255, 255, 255, 0.03);
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
   height: 220px;
   overflow: hidden;
 }

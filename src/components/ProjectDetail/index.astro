@@ -6,6 +6,7 @@ import { useTranslations } from "../../i18n/index";
 import type { Lang } from "../../i18n/index";
 import Button from "../Button/index.astro";
 import RelatedProjectCard from "../RelatedProjectCard/index.astro";
+import GlowBackground from "../GlowBackground/index.astro";
 
 interface Props {
   project: ProjectDetail;
@@ -19,42 +20,43 @@ const related = projects.filter((p) => p.slug !== project.slug);
 const gallery = project.gallery ?? [];
 const heroDesktopImage =
   project.images.find((image) => !image.isMobile) ?? project.images[0];
-const heroMobileImage =
-  project.images.find((image) => image.isMobile) ?? null;
+const heroMobileImage = project.images.find((image) => image.isMobile) ?? null;
 ---
 
-
-<div aria-hidden="true" class="pointer-events-none select-none">
-  <div class="detail-glow detail-glow--1"></div>
-  <div class="detail-glow detail-glow--2"></div>
-  <div class="detail-glow detail-glow--3"></div>
-  <div class="detail-glow detail-glow--4"></div>
-</div>
+<GlowBackground />
 
 <div class="w-full max-w-[1050px] relative mt-10">
   <div class="space-y-8 relative z-10">
-
     <!-- Hero -->
     <div class="border-b border-white/10 pb-20">
-      <div class="grid grid-cols-1 md:grid-cols-[1fr_240px] gap-12 items-center">
-
+      <div
+        class="grid grid-cols-1 md:grid-cols-[1fr_240px] gap-12 items-center"
+      >
         <!-- Left: content -->
         <div class="space-y-8">
           <div class="flex items-center gap-3 flex-wrap">
             <div class="w-12 h-12 rounded-lg overflow-clip">
-              <img src={project.icon} alt={project.name + " icon"} class="w-full h-full object-contain" />
+              <img
+                src={project.icon}
+                alt={project.name + " icon"}
+                class="w-full h-full object-contain"
+              />
             </div>
             <span
               class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest border ${project.url ? "border-green-400/50 text-green-400" : "border-primary/20 text-primary/40"}`}
             >
               {project.url ? "LIVE" : t("project.status.internal")}
             </span>
-            <span class="text-primary/70 text-xs font-semibold uppercase tracking-widest">
+            <span
+              class="text-primary/70 text-xs font-semibold uppercase tracking-widest"
+            >
               {project.role[lang]}
             </span>
           </div>
 
-          <h1 class="text-6xl md:text-7xl font-black text-primary leading-none tracking-tight">
+          <h1
+            class="text-6xl md:text-7xl font-black text-primary leading-none tracking-tight"
+          >
             {project.name}
           </h1>
 
@@ -63,7 +65,9 @@ const heroMobileImage =
           </p>
 
           <div class="space-y-4">
-            <p class="text-xs font-bold text-primary uppercase tracking-[0.2em]">
+            <p
+              class="text-xs font-bold text-primary uppercase tracking-[0.2em]"
+            >
               {t("project.tech")}
             </p>
             <div class="flex flex-wrap gap-2">
@@ -80,7 +84,11 @@ const heroMobileImage =
           {
             project.url && (
               <div class="max-w-[150px]">
-                <Button href={project.url} target="_blank" rel="noopener noreferrer">
+                <Button
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {t("project.visit")}
                 </Button>
               </div>
@@ -93,15 +101,13 @@ const heroMobileImage =
           project.images.length > 0 && (
             <div class="rounded-xl shadow-2xl shadow-black/50 overflow-clip h-fit w-fit">
               <div class="relative md:h-[476px] h-full w-full flex items-start overflow-y-auto justify-center">
-                {
-                  heroMobileImage && (
-                    <img
-                      src={heroMobileImage.src}
-                      alt={heroMobileImage.alt}
-                      class="md:block hidden"
-                    />
-                  )
-                }
+                {heroMobileImage && (
+                  <img
+                    src={heroMobileImage.src}
+                    alt={heroMobileImage.alt}
+                    class="md:block hidden"
+                  />
+                )}
                 <img
                   src={heroDesktopImage.src}
                   alt={heroDesktopImage.alt}
@@ -153,9 +159,7 @@ const heroMobileImage =
                 </div>
               )}
               {gallery.map((img) => (
-                <figure
-                  class="gallery-slide border border-white/10 gallery-slide-desktop"
-                >
+                <figure class="gallery-slide border border-white/10 gallery-slide-desktop">
                   <div class="gallery-slide-media">
                     <img
                       src={img.src}
@@ -164,13 +168,11 @@ const heroMobileImage =
                       class="gallery-slide-img"
                     />
                   </div>
-                  {
-                    img.caption?.[lang] && (
-                      <figcaption class="gallery-slide-caption">
-                        {img.caption[lang]}
-                      </figcaption>
-                    )
-                  }
+                  {img.caption?.[lang] && (
+                    <figcaption class="gallery-slide-caption">
+                      {img.caption[lang]}
+                    </figcaption>
+                  )}
                 </figure>
               ))}
             </div>
@@ -199,7 +201,6 @@ const heroMobileImage =
         }
       </div>
     </div>
-
   </div>
 </div>
 
@@ -275,7 +276,10 @@ const heroMobileImage =
 
     setup();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", function () { setup(); onScroll(); });
+    window.addEventListener("resize", function () {
+      setup();
+      onScroll();
+    });
 
     track.querySelectorAll("img").forEach(function (img) {
       img.addEventListener("error", function () {

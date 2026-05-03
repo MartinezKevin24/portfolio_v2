@@ -2,20 +2,57 @@
 import Layout from "../../../layout/index.astro";
 import { useTranslations } from "../../../i18n/index";
 import type { Lang } from "../../../i18n/index";
+import ProjectPreviewCard from "../../../components/ProjectPreviewCard/index.astro";
+import { TECH_STACK_PILL_CLASSES } from "../../../constants/techStackPillClasses";
+import RelatedProjectCard from "../../../components/RelatedProjectCard/index.astro";
+import GlowBackground from "../../../components/GlowBackground/index.astro";
+import { projects } from "../../../data/projects";
+import { projectsPreviews } from "../../../data/projectsPreviews";
 
+const resumeProjects = projects.filter(
+  (project) => project.slug !== projectsPreviews[0].slug,
+);
 const lang = (Astro.currentLocale ?? "es") as Lang;
 const t = useTranslations(lang);
+const base = lang === "en" ? "/en" : "";
 ---
 
 <Layout
   title="Projects | Kevin Martínez"
   description="Production fullstack projects: clinical IoT platforms, Next.js eCommerce, and environmental monitoring systems for public agencies."
 >
-	<div class="w-full max-w-[1050px] relative mt-10">
-		<div class="space-y-8 relative z-10">
-			<h1 class="text-5xl md:text-6xl font-medium text-primary leading-none tracking-tight">
-				{t("projects.title")}
-			</h1>
-		</div>
-	</div>
+  <GlowBackground />
+  <div class="w-full max-w-[1050px] relative mt-10 space-y-12">
+    <div class="space-y-8 relative z-10">
+      <h1
+        class="text-5xl md:text-6xl font-medium text-primary leading-none tracking-tight"
+      >
+        {t("projects.title")}
+      </h1>
+    </div>
+		<section class="grid grid-cols-2 gap-6">
+      <div class="col-span-2">
+        <ProjectPreviewCard
+          project={projectsPreviews[0]}
+          lang={lang}
+          techClassMap={TECH_STACK_PILL_CLASSES}
+        />
+      </div>
+      {
+        resumeProjects?.map((project) => (
+          <div class="col-span-2 md:col-span-1">
+            <RelatedProjectCard
+              href={`${base}/projects/${project.slug}`}
+              customClass="shadow-[0_8px_32px_rgb(0_0_0/0.5)]"
+              name={project.name}
+              icon={project.icon}
+              role={project.role[lang]}
+              description={project.description[lang]}
+              readMoreLabel={t("project.readMore")}
+            />
+          </div>
+        ))
+      }
+    </section>
+  </div>
 </Layout>

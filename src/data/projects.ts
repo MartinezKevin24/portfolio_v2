@@ -18,69 +18,85 @@ export const projects: ProjectDetail[] = [
       es: [
         {
           title: "Nueva plataforma Next.js",
-          description: "Construida desde cero con App Router, Server Components y Server Actions para máximo rendimiento.",
+          description:
+            "Construida desde cero con App Router, Server Components y Server Actions para máximo rendimiento.",
         },
         {
           title: "SEO Técnico Avanzado",
-          description: "SSR/ISR, metatags dinámicos, sitemap automatizado y datos estructurados JSON-LD.",
+          description:
+            "SSR/ISR, metatags dinámicos, sitemap automatizado y datos estructurados JSON-LD.",
         },
         {
           title: "Core Web Vitals",
-          description: "Optimización de LCP, CLS e INP con lazy loading, next/image y code splitting.",
+          description:
+            "Optimización de LCP, CLS e INP con lazy loading, next/image y code splitting.",
         },
         {
           title: "Librería de Componentes",
-          description: "Librería React privada con Webpack en la plataforma legacy, publicada en GitLab Package Registry y compartida entre desktop y mobile.",
+          description:
+            "Librería React privada con Webpack en la plataforma legacy, publicada en GitLab Package Registry y compartida entre desktop y mobile.",
         },
         {
           title: "Mantenimiento Legacy",
-          description: "Mantenimiento y mejoras a la plataforma anterior en React puro durante la transición a Next.js.",
+          description:
+            "Mantenimiento y mejoras a la plataforma anterior en React puro durante la transición a Next.js.",
         },
         {
           title: "Caché con Redis",
-          description: "Reducción de tiempos de carga del catálogo mediante caché Redis y estado global con Jotai.",
+          description:
+            "Reducción de tiempos de carga del catálogo mediante caché Redis y estado global con Jotai.",
         },
         {
           title: "Accesibilidad WCAG 2",
-          description: "Monitoreo y corrección de todos los errores de accesibilidad garantizando cumplimiento en ambas plataformas.",
+          description:
+            "Monitoreo y corrección de todos los errores de accesibilidad garantizando cumplimiento en ambas plataformas.",
         },
         {
           title: "SCRUM & GitFlow",
-          description: "Desarrollo ágil con metodología SCRUM, GitFlow y revisiones de código continuas en equipo.",
+          description:
+            "Desarrollo ágil con metodología SCRUM, GitFlow y revisiones de código continuas en equipo.",
         },
       ],
       en: [
         {
           title: "Next.js Platform",
-          description: "Built from scratch with App Router, Server Components, and Server Actions for maximum performance.",
+          description:
+            "Built from scratch with App Router, Server Components, and Server Actions for maximum performance.",
         },
         {
           title: "Advanced Technical SEO",
-          description: "SSR/ISR, dynamic metatags, automated sitemap, and JSON-LD structured data.",
+          description:
+            "SSR/ISR, dynamic metatags, automated sitemap, and JSON-LD structured data.",
         },
         {
           title: "Core Web Vitals",
-          description: "LCP, CLS, and INP optimization via lazy loading, next/image, and code splitting.",
+          description:
+            "LCP, CLS, and INP optimization via lazy loading, next/image, and code splitting.",
         },
         {
           title: "Component Library",
-          description: "Private React library with Webpack on the legacy platform, published to GitLab Package Registry and shared across desktop and mobile.",
+          description:
+            "Private React library with Webpack on the legacy platform, published to GitLab Package Registry and shared across desktop and mobile.",
         },
         {
           title: "Legacy Maintenance",
-          description: "Maintained and improved the previous pure React platform during the transition to Next.js.",
+          description:
+            "Maintained and improved the previous pure React platform during the transition to Next.js.",
         },
         {
           title: "Redis Caching",
-          description: "Reduced catalog load times through Redis caching and global state management with Jotai.",
+          description:
+            "Reduced catalog load times through Redis caching and global state management with Jotai.",
         },
         {
           title: "WCAG 2 Accessibility",
-          description: "Monitored and resolved all accessibility issues ensuring compliance across both platforms.",
+          description:
+            "Monitored and resolved all accessibility issues ensuring compliance across both platforms.",
         },
         {
           title: "SCRUM & GitFlow",
-          description: "Agile development with SCRUM methodology, GitFlow, and continuous code reviews.",
+          description:
+            "Agile development with SCRUM methodology, GitFlow, and continuous code reviews.",
         },
       ],
     },
@@ -170,61 +186,75 @@ export const projects: ProjectDetail[] = [
       es: [
         {
           title: "Dashboard en Tiempo Real",
-          description: "MQTT sobre WebSockets para monitoreo continuo de la posición del paciente en cama.",
+          description:
+            "MQTT sobre WebSockets para monitoreo continuo de la posición del paciente en cama.",
         },
         {
           title: "Sistema de Alarmas",
-          description: "Alarmas automáticas con tres niveles de peligrosidad según la posición del paciente en camilla.",
+          description:
+            "Alarmas automáticas con tres niveles de peligrosidad según la posición del paciente en camilla.",
         },
         {
           title: "Registro y Parámetros",
-          description: "Módulo para registrar pacientes, dispositivos y configurar umbrales de alerta personalizados.",
+          description:
+            "Módulo para registrar pacientes, dispositivos y configurar umbrales de alerta personalizados.",
         },
         {
           title: "Reportes Médicos",
-          description: "Generación de reportes detallados de pacientes, dispositivos y comportamientos registrados.",
+          description:
+            "Generación de reportes detallados de pacientes, dispositivos y comportamientos registrados.",
         },
         {
           title: "Animaciones de Estado",
-          description: "Animaciones y transiciones CSS para visualización clara y en tiempo real del estado del paciente.",
+          description:
+            "Animaciones y transiciones CSS para visualización clara y en tiempo real del estado del paciente.",
         },
         {
           title: "Estado Reactivo RxJS",
-          description: "Gestión de estado reactiva con RxJS en Angular para manejo eficiente de datos en tiempo real.",
+          description:
+            "Gestión de estado reactiva con RxJS en Angular para manejo eficiente de datos en tiempo real.",
         },
         {
           title: "Diseño UI Completo",
-          description: "Responsable del diseño completo, desde wireframes hasta la implementación final de la interfaz.",
+          description:
+            "Responsable del diseño completo, desde wireframes hasta la implementación final de la interfaz.",
         },
       ],
       en: [
         {
           title: "Real-Time Dashboard",
-          description: "MQTT over WebSockets for continuous patient position monitoring on the bed.",
+          description:
+            "MQTT over WebSockets for continuous patient position monitoring on the bed.",
         },
         {
           title: "Alarm System",
-          description: "Automatic alarms with three danger levels based on the patient's bed position.",
+          description:
+            "Automatic alarms with three danger levels based on the patient's bed position.",
         },
         {
           title: "Registration & Parameters",
-          description: "Module for patient and device registration and custom alert threshold configuration.",
+          description:
+            "Module for patient and device registration and custom alert threshold configuration.",
         },
         {
           title: "Medical Reports",
-          description: "Detailed report generation for patients, devices, and recorded behaviors.",
+          description:
+            "Detailed report generation for patients, devices, and recorded behaviors.",
         },
         {
           title: "Status Animations",
-          description: "CSS animations and transitions for clear real-time visualization of patient status.",
+          description:
+            "CSS animations and transitions for clear real-time visualization of patient status.",
         },
         {
           title: "Reactive State RxJS",
-          description: "Reactive state management with RxJS in Angular for efficient real-time data handling.",
+          description:
+            "Reactive state management with RxJS in Angular for efficient real-time data handling.",
         },
         {
           title: "Full UI Design",
-          description: "Full design ownership — from wireframes to final interface implementation.",
+          description:
+            "Full design ownership — from wireframes to final interface implementation.",
         },
       ],
     },
@@ -266,7 +296,7 @@ export const projects: ProjectDetail[] = [
         alt: "La Cardio dashboard page",
         caption: {
           es: "Vista crítica del sistema que concentra la información clave de cada paciente en tiempo real: ubicación, estado del dispositivo y alertas de riesgo. Diseñada para que el personal de cuidado actúe con rapidez y tome decisiones informadas en situaciones sensibles.",
-          en: "Critical system view that concentrates the key information of each patient in real time: location, device status, and risk alerts. Designed to allow caregivers to act quickly and make informed decisions in sensitive situations.", 
+          en: "Critical system view that concentrates the key information of each patient in real time: location, device status, and risk alerts. Designed to allow caregivers to act quickly and make informed decisions in sensitive situations.",
         },
       },
       {
@@ -304,53 +334,65 @@ export const projects: ProjectDetail[] = [
       es: [
         {
           title: "IoT en Tiempo Real",
-          description: "Conexión en tiempo real con dispositivos hídricos IoT mediante protocolo MQTT.",
+          description:
+            "Conexión en tiempo real con dispositivos hídricos IoT mediante protocolo MQTT.",
         },
         {
           title: "Métricas Ambientales",
-          description: "Visualización de métricas ambientales de cuerpos de agua en el departamento de Bolívar.",
+          description:
+            "Visualización de métricas ambientales de cuerpos de agua en el departamento de Bolívar.",
         },
         {
           title: "SEO Técnico",
-          description: "Sitemap automatizado, metatags dinámicos y datos estructurados para visibilidad pública.",
+          description:
+            "Sitemap automatizado, metatags dinámicos y datos estructurados para visibilidad pública.",
         },
         {
           title: "Estado con Recoil",
-          description: "Gestión eficiente de estado con Recoil para datos IoT en tiempo real.",
+          description:
+            "Gestión eficiente de estado con Recoil para datos IoT en tiempo real.",
         },
         {
           title: "API Routes Node.js",
-          description: "API routes con Node.js integradas en Next.js para comunicación directa con dispositivos IoT.",
+          description:
+            "API routes con Node.js integradas en Next.js para comunicación directa con dispositivos IoT.",
         },
         {
           title: "UI Responsive",
-          description: "Interfaz responsive con Tailwind CSS y animaciones personalizadas para datos ambientales.",
+          description:
+            "Interfaz responsive con Tailwind CSS y animaciones personalizadas para datos ambientales.",
         },
       ],
       en: [
         {
           title: "Real-Time IoT",
-          description: "Real-time connection to water IoT devices via MQTT protocol.",
+          description:
+            "Real-time connection to water IoT devices via MQTT protocol.",
         },
         {
           title: "Environmental Metrics",
-          description: "Visualization of environmental metrics for water bodies in the Bolívar department.",
+          description:
+            "Visualization of environmental metrics for water bodies in the Bolívar department.",
         },
         {
           title: "Technical SEO",
-          description: "Automated sitemap, dynamic metatags, and structured data for public visibility.",
+          description:
+            "Automated sitemap, dynamic metatags, and structured data for public visibility.",
         },
         {
           title: "Recoil State",
-          description: "Efficient state management with Recoil for real-time IoT data handling.",
+          description:
+            "Efficient state management with Recoil for real-time IoT data handling.",
         },
         {
           title: "Node.js API Routes",
-          description: "Node.js API routes integrated in Next.js for direct IoT device communication.",
+          description:
+            "Node.js API routes integrated in Next.js for direct IoT device communication.",
         },
         {
           title: "Responsive UI",
-          description: "Responsive interface with Tailwind CSS and custom animations for environmental data.",
+          description:
+            "Responsive interface with Tailwind CSS and custom animations for environmental data.",
         },
       ],
     },
@@ -410,7 +452,7 @@ export const projects: ProjectDetail[] = [
           es: "Módulo de visualización tabular que presenta variables recolectadas por las estaciones, con filtrado dinámico por rangos de tiempo y exportación a CSV.",
           en: "Table visualization module that presents variables collected by stations, with dynamic filtering by time ranges and CSV export.",
         },
-      }
+      },
     ],
   },
 ];

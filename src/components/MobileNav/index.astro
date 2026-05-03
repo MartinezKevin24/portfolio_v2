@@ -8,10 +8,9 @@ const t = useTranslations(lang);
 const pathname = Astro.url.pathname;
 
 const homeHref = lang === "es" ? "/" : "/en";
-const projectsHref = "/projects";
+const projectsHref = lang === "es" ? "/projects" : "/en/projects";
 
-const isHome =
-  pathname === "/" || pathname === "/en" || pathname === "/en/";
+const isHome = pathname === "/" || pathname === "/en" || pathname === "/en/";
 const isProjects =
   pathname.startsWith("/projects") || pathname.startsWith("/en/projects");
 const isResume =
@@ -124,10 +123,7 @@ const curriculumHref = curriculum[lang];
   });
 
   document.addEventListener("click", (e) => {
-    if (
-      !btn?.contains(e.target as Node) &&
-      !menu?.contains(e.target as Node)
-    ) {
+    if (!btn?.contains(e.target as Node) && !menu?.contains(e.target as Node)) {
       closeMenu();
     }
   });

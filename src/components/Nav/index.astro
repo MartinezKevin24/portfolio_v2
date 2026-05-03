@@ -8,16 +8,16 @@ const t = useTranslations(lang);
 const pathname = Astro.url.pathname;
 
 const homeHref = lang === "es" ? "/" : "/en";
-const projectsHref = "/projects";
+const projectsHref = lang === "es" ? "/projects" : "/en/projects";
 
-const isHome =
-  pathname === "/" || pathname === "/en" || pathname === "/en/";
+const isHome = pathname === "/" || pathname === "/en" || pathname === "/en/";
 const isProjects =
   pathname.startsWith("/projects") || pathname.startsWith("/en/projects");
 const isResume =
   pathname.startsWith("/curriculum") || pathname.startsWith("/en/curriculum");
 
-const activeClass = "px-3 py-1 rounded-full transition-all duration-300 text-green-400";
+const activeClass =
+  "px-3 py-1 rounded-full transition-all duration-300 text-green-400";
 const inactiveClass =
   "px-3 py-1 rounded-full transition-all duration-300 text-white/70 hover:text-white";
 

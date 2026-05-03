@@ -33,7 +33,7 @@ export interface ProjectDetail {
   images: {
     src: string;
     alt: string;
-    isMobile?: boolean; 
+    isMobile?: boolean;
   }[];
   galleryText?: {
     es: string;

@@ -7,47 +7,53 @@ import { projectsPreviews } from "../../data/projectsPreviews";
 import { TECH_STACK_PILL_CLASSES } from "../../constants/techStackPillClasses";
 import { projects } from "../../data/projects";
 import RelatedProjectCard from "../../components/RelatedProjectCard/index.astro";
+import GlowBackground from "../../components/GlowBackground/index.astro";
 
 const lang = (Astro.currentLocale ?? "es") as Lang;
 const base = lang === "en" ? "/en" : "";
 const t = useTranslations(lang);
 
-const resumeProjects = projects.filter((project) => project.slug !== projectsPreviews[0].slug);
-
+const resumeProjects = projects.filter(
+  (project) => project.slug !== projectsPreviews[0].slug,
+);
 ---
 
 <Layout
   title="Proyectos | Kevin Martínez"
   description="Proyectos fullstack en producción: plataformas clínicas con IoT, eCommerce con Next.js y sistemas de monitoreo ambiental para entidades públicas."
 >
-	<div class="w-full max-w-[1050px] relative mt-10 space-y-12">
-		<div class="space-y-8 relative z-10 col-span-2">
-			<h1 class="text-5xl md:text-6xl font-medium text-primary leading-none tracking-tight">
-				{t("projects.title")}
-			</h1>
-		</div>
-		<section class="grid grid-cols-2 gap-6">
-			<div class="col-span-2">
-				<ProjectPreviewCard
-					project={projectsPreviews[0]} 
-					lang={lang} 
-					techClassMap={TECH_STACK_PILL_CLASSES} />
-			</div>
-			{
-				resumeProjects?.map((project) => (
-					<div class="col-span-2 md:col-span-1">
-						<RelatedProjectCard
-							href={`${base}/projects/${project.slug}`}
-							customClass="shadow-[0_8px_32px_rgb(0_0_0/0.5)]"
-							name={project.name}
-							icon={project.icon}
-							role={project.role[lang]}
-							description={project.description[lang]}
-							readMoreLabel={t("project.readMore")}
-						/>
-					</div>
-				))
-			}
-		</section>
-	</div>
+  <GlowBackground />
+  <div class="w-full max-w-[1050px] relative mt-10 space-y-12">
+    <div class="space-y-8 relative z-10 col-span-2">
+      <h1
+        class="text-5xl md:text-6xl font-medium text-primary leading-none tracking-tight"
+      >
+        {t("projects.title")}
+      </h1>
+    </div>
+    <section class="grid grid-cols-2 gap-6">
+      <div class="col-span-2">
+        <ProjectPreviewCard
+          project={projectsPreviews[0]}
+          lang={lang}
+          techClassMap={TECH_STACK_PILL_CLASSES}
+        />
+      </div>
+      {
+        resumeProjects?.map((project) => (
+          <div class="col-span-2 md:col-span-1">
+            <RelatedProjectCard
+              href={`${base}/projects/${project.slug}`}
+              customClass="shadow-[0_8px_32px_rgb(0_0_0/0.5)]"
+              name={project.name}
+              icon={project.icon}
+              role={project.role[lang]}
+              description={project.description[lang]}
+              readMoreLabel={t("project.readMore")}
+            />
+          </div>
+        ))
+      }
+    </section>
+  </div>
 </Layout>

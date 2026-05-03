@@ -1,4 +1,3 @@
-
 ---
 import "../Projects/styles.css";
 import "./styles.css";
@@ -13,7 +12,9 @@ export interface Props {
 
 const { project, lang, techClassMap } = Astro.props;
 const base = lang === "en" ? "/en" : "";
-const detailHref = project.slug ? `${base}/projects/${project.slug}` : undefined;
+const detailHref = project.slug
+  ? `${base}/projects/${project.slug}`
+  : undefined;
 ---
 
 <div
@@ -65,11 +66,15 @@ const detailHref = project.slug ? `${base}/projects/${project.slug}` : undefined
           }
         </div>
         <ul class="project-preview-card__tech-list">
-          {project.tech_stack.map((tech) => (
-            <li class={`tech-pill text-xs ${techClassMap[tech] ?? "tech-default"}`}>
-              {tech}
-            </li>
-          ))}
+          {
+            project.tech_stack.map((tech) => (
+              <li
+                class={`tech-pill text-xs ${techClassMap[tech] ?? "tech-default"}`}
+              >
+                {tech}
+              </li>
+            ))
+          }
         </ul>
       </div>
       <p class="project-preview-card__description text-primary">
