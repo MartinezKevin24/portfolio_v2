@@ -1,0 +1,134 @@
+---
+import { useTranslations } from "../../i18n/index";
+import type { Lang } from "../../i18n/index";
+import { curriculum } from "../../constants/curriculum";
+
+const lang = (Astro.currentLocale ?? "es") as Lang;
+const t = useTranslations(lang);
+const pathname = Astro.url.pathname;
+
+const homeHref = lang === "es" ? "/" : "/en";
+const projectsHref = "/projects";
+
+const isHome =
+  pathname === "/" || pathname === "/en" || pathname === "/en/";
+const isProjects =
+  pathname.startsWith("/projects") || pathname.startsWith("/en/projects");
+const isResume =
+  pathname.startsWith("/curriculum") || pathname.startsWith("/en/curriculum");
+
+const activeClass = "text-green-400";
+const inactiveClass = "text-white/90 hover:text-white hover:bg-white/5";
+
+const curriculumHref = curriculum[lang];
+---
+
+<div class="md:hidden">
+  <button
+    id="mobile-menu-btn"
+    class="glass-card rounded-full p-2.5 text-white flex items-center justify-center transition-all duration-300"
+    aria-label="Menu"
+    aria-expanded="false"
+  >
+    <svg
+      id="hamburger-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+    <svg
+      id="close-icon"
+      class="hidden"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+</div>
+
+<nav
+  id="mobile-menu"
+  class="hidden fixed left-4 right-4 z-50"
+  aria-label="Mobile navigation"
+>
+  <div
+    class="glass-card rounded-2xl p-2 flex flex-col gap-0.5 text-sm font-bold"
+  >
+    <a
+      href={homeHref}
+      class={`px-4 py-3 rounded-xl transition-all duration-200 ${isHome ? activeClass : inactiveClass}`}
+    >
+      {t("nav.home")}
+    </a>
+    <span class="border-t border-white/10 mx-2"></span>
+    <a
+      href={projectsHref}
+      class={`px-4 py-3 rounded-xl transition-all duration-200 ${isProjects ? activeClass : inactiveClass}`}
+    >
+      {t("nav.projects")}
+    </a>
+    <span class="border-t border-white/10 mx-2"></span>
+    <a
+      href={curriculumHref}
+      class={`px-4 py-3 rounded-xl transition-all duration-200 ${isResume ? activeClass : inactiveClass}`}
+    >
+      {t("nav.resume")}
+    </a>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  function openMenu() {
+    const rect = btn!.getBoundingClientRect();
+    (menu as HTMLElement).style.top = rect.bottom + 10 + "px";
+    menu!.classList.remove("hidden");
+    hamburgerIcon!.classList.add("hidden");
+    closeIcon!.classList.remove("hidden");
+    btn!.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    menu!.classList.add("hidden");
+    hamburgerIcon!.classList.remove("hidden");
+    closeIcon!.classList.add("hidden");
+    btn!.setAttribute("aria-expanded", "false");
+  }
+
+  btn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menu?.classList.contains("hidden") ? openMenu() : closeMenu();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (
+      !btn?.contains(e.target as Node) &&
+      !menu?.contains(e.target as Node)
+    ) {
+      closeMenu();
+    }
+  });
+</script>

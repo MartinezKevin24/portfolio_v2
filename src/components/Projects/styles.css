@@ -11,6 +11,9 @@
   width: 200px;
   border-radius: 0.75rem;
   transition: all 300ms;
+  @media (max-width: 768px) {
+    width: 120px;
+  }
 }
 
 .group:hover .screen_mobile {
@@ -25,6 +28,9 @@
   right: 25px;
   bottom: -25px;
   transition: all 300ms;
+  @media (max-width: 768px) {
+    width: 200px;
+  }
 }
 
 .group:hover .section_desktop_preview {

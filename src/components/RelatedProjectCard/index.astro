@@ -1,0 +1,50 @@
+---
+import "./styles.css";
+
+interface Props {
+  href: string;
+  name: string;
+  icon?: string;
+  role: string;
+  description: string;
+  readMoreLabel: string;
+  customClass?: string;
+}
+
+const { href, name, icon, role, description, readMoreLabel, customClass } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`related-card border border-primary/20 rounded-xl p-5 flex gap-4 backdrop-blur-md items-start ${customClass}`}
+>
+  <div class="flex-1 space-y-4 min-w-0">
+    <div class="flex items-center gap-4">
+      {
+        icon ? (
+          <div class="w-14 h-14 rounded-lg overflow-clip">
+            <img src={icon} alt={name + " icon"} class="w-full h-full object-contain" />
+          </div>
+        ) : (
+          <span class="w-14 h-14 rounded-lg overflow-clip bg-gray-500 block" />
+        )
+      }
+      <div>
+        <h3 class="font-black text-lg text-primary">
+          {name}
+        </h3>
+        <p class="text-xs text-primary/70">
+          {role}
+        </p>
+      </div>
+    </div>
+    <p class="text-xs line-clamp-2 text-primary leading-relaxed">
+      {description}
+    </p>
+  </div>
+  <div class="px-4 py-[6px] flex justify-center items-center bg-blue-500/20 hover:bg-blue-500/30 transition duration-200 rounded-full">
+    <span class="text-[#007dfb] text-xs font-bold">
+      {readMoreLabel}
+    </span>
+  </div>
+</a>

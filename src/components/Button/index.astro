@@ -1,10 +1,11 @@
 ---
 import "./style.css";
+const { href, ...props } = Astro.props
 ---
 
-<button class="button-container">
+<a href={href} class="button-container" {...props}>
   <span class="text-content"><slot /></span>
   <span class="icon-wrapper">
     <span class="icon-arrow-up-right2 rotate-45"></span>
   </span>
-</button>
+</a>

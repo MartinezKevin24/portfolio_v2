@@ -2,6 +2,7 @@
 import Layout from "../../layout/index.astro";
 import ProjectDetail from "../../components/ProjectDetail/index.astro";
 import { projects } from "../../data/projects";
+import type { Lang } from "../../i18n/index";
 
 export function getStaticPaths() {
   return projects.map((project) => ({
@@ -11,8 +12,36 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const lang = (Astro.currentLocale ?? "es") as Lang;
+
+const description = project.description[lang].slice(0, 160);
+
+const projectJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: `${project.name} | Kevin Martínez`,
+  description,
+  url: `https://kmartinez.dev/projects/${project.slug}`,
+  author: {
+    "@type": "Person",
+    name: "Kevin Martínez",
+    url: "https://kmartinez.dev",
+  },
+  ...(project.url && {
+    about: {
+      "@type": "SoftwareApplication",
+      name: project.name,
+      url: project.url,
+    },
+  }),
+};
 ---
 
-<Layout>
+<Layout
+  title={`${project.name} | Kevin Martínez`}
+  description={description}
+  noIndex={true}
+  jsonLd={projectJsonLd}
+>
   <ProjectDetail project={project} />
 </Layout>

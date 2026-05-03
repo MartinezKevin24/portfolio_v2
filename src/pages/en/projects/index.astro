@@ -1,0 +1,21 @@
+---
+import Layout from "../../../layout/index.astro";
+import { useTranslations } from "../../../i18n/index";
+import type { Lang } from "../../../i18n/index";
+
+const lang = (Astro.currentLocale ?? "es") as Lang;
+const t = useTranslations(lang);
+---
+
+<Layout
+  title="Projects | Kevin Martínez"
+  description="Production fullstack projects: clinical IoT platforms, Next.js eCommerce, and environmental monitoring systems for public agencies."
+>
+	<div class="w-full max-w-[1050px] relative mt-10">
+		<div class="space-y-8 relative z-10">
+			<h1 class="text-5xl md:text-6xl font-medium text-primary leading-none tracking-tight">
+				{t("projects.title")}
+			</h1>
+		</div>
+	</div>
+</Layout>

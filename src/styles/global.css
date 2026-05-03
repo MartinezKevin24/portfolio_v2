@@ -12,7 +12,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 #cursor-glow {
@@ -23,14 +23,14 @@ html {
   pointer-events: none;
   z-index: 0;
   filter: blur(100px);
-  opacity: 0.18;
+  opacity: 0.15;
   transform: translate(-50%, -50%);
   will-change: left, top;
 }
 
 body {
   background: #171625;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .glass-card {
@@ -40,7 +40,7 @@ body {
   position: relative;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   /* overflow: clip; */
-  border: 1px solid rgba(255, 255, 255, 0.308);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tech-pill {

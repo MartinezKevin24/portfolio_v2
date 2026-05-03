@@ -1,12 +1,40 @@
 ---
 import "../styles/global.css";
 import LangToggle from "../components/LangToggle/index.astro";
+import MobileNav from "../components/MobileNav/index.astro";
 import Nav from "../components/Nav/index.astro";
 import { useTranslations } from "../i18n/index";
 import type { Lang } from "../i18n/index";
 
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noIndex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const SITE = "https://kmartinez.dev";
+
+const { title, description, ogImage, noIndex = false, jsonLd } = Astro.props;
 const lang = (Astro.currentLocale ?? "es") as Lang;
 const t = useTranslations(lang);
+
+const pageTitle = title ?? t("meta.title");
+const pageDescription = description ?? t("meta.description");
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isEn = lang === "en";
+
+const esPath = isEn ? pathname.replace(/^\/en/, "") || "/" : pathname;
+const enPath = isEn ? pathname : "/en" + (pathname === "/" ? "" : pathname);
+
+const canonicalUrl = new URL(pathname === "/" ? "/" : pathname, SITE).href;
+const esUrl = new URL(esPath, SITE).href;
+const enUrl = new URL(enPath, SITE).href;
+
+const ogImageUrl = ogImage ? new URL(ogImage, SITE).href : null;
+const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!doctype html>
@@ -14,13 +42,48 @@ const t = useTranslations(lang);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{t("meta.title")}</title>
+
+    <!-- Primary SEO -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="author" content="Kevin Martínez" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow"} />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={esUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:locale" content={isEn ? "en_US" : "es_MX"} />
+    <meta property="og:site_name" content="Kevin Martínez" />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content={ogImageUrl ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon_memoji.webp" />
+
+    <!-- JSON-LD -->
+    {jsonLdItems.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body>
     <div id="cursor-glow" aria-hidden="true"></div>
     <div class="flex flex-col items-center md:py-12 py-6 px-4 min-h-screen relative z-10">
       <div class="w-full max-w-[1050px] flex justify-between items-center mb-4">
         <Nav />
+        <MobileNav />
         <LangToggle />
       </div>
       <main class="w-full max-w-[1050px] space-y-8 md:space-y-16 space-x-4">

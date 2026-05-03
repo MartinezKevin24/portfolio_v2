@@ -13,15 +13,27 @@ import Projects from "../components/Projects/index.astro";
 
 const lang = (Astro.currentLocale ?? "es") as Lang;
 const t = useTranslations(lang);
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Kevin Martínez",
+  jobTitle: "Desarrollador Fullstack",
+  url: "https://kmartinez.dev",
+  sameAs: [
+    "https://github.com/MartinezKevin24",
+    "https://www.linkedin.com/in/kevinmartinezacevedo",
+  ],
+};
 ---
 
-<Layout>
-  <section id="home" class="space-y-4 w-full">
+<Layout jsonLd={personJsonLd}>
+  <section class="space-y-4 w-full">
     <div class="relative z-0 w-full grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="z-10 col-span-1 md:col-span-2">
         <Presentation />
       </div>
-      <div id="resume" class="grid grid-cols-2 md:grid-cols-1 gap-4 h-[180px] md:h-full">
+      <div class="grid grid-cols-2 md:grid-cols-1 gap-4 h-[180px] md:h-full">
         <Resume />
         <div class="order-3 min-w-0 md:order-1 md:hidden block">
           <Location />
@@ -46,12 +58,10 @@ const t = useTranslations(lang);
       </div>
     </div>
   </section>
-  <section id="projects" class="space-y-8">
-    <h1 class="text-6xl w-fit font-bold text-primary">
+  <section class="space-y-8">
+    <h1 class="text-5xl md:text-6xl w-fit font-medium text-primary">
       {t("project.title.section")}
     </h1>
-    <div>
-      <Projects />
-    </div>
+    <Projects />
   </section>
 </Layout>

@@ -1,0 +1,114 @@
+.project-preview-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 340px;
+  gap: 2rem;
+  position: relative;
+  overflow: clip;
+}
+
+@media (min-width: 768px) {
+  .project-preview-card {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.project-preview-card__media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  order: 2;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .project-preview-card__media {
+    order: 1;
+  }
+}
+
+.project-preview-card__desktop-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .project-preview-card__desktop-wrap {
+    position: absolute;
+    width: 470px;
+  }
+}
+
+.project-preview-card__desktop-img {
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.project-preview-card__content {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  gap: 1.5rem;
+  order: 1;
+}
+
+@media (min-width: 768px) {
+  .project-preview-card__content {
+    grid-column: span 2;
+    order: 2;
+  }
+}
+
+.project-preview-card__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-preview-card__title-link {
+  transition:
+    color 300ms,
+    color 200ms;
+}
+
+.project-preview-card__title-link:hover {
+  color: rgb(134 239 172);
+}
+
+.project-preview-card__external-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  transition: background-color 300ms;
+}
+
+.project-preview-card__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-preview-card__description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .project-preview-card__description {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+  }
+}

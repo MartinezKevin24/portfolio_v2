@@ -2,10 +2,19 @@
 import working from "../../assets/memoji_working.webp";
 import cv2 from "../../assets/memoji_cv_1.png";
 import "./style.css";
+import type { Lang } from "../../i18n/index";
+import { curriculum } from "../../constants/curriculum";
+
+const lang = (Astro.currentLocale ?? "es") as Lang;
+const linkCurriculum = curriculum[lang];
+
 ---
 
-<section
+<a
   class="glass-card text-primary flex flex-col group h-full resume items-center justify-start p-6 rounded-xl relative col-span-1"
+  href={linkCurriculum}
+  target="_blank"
+  rel="noopener noreferrer"
 >
   <h2 class="text-md md:text-4xl font-black">CV / Resume</h2>
   <img
@@ -18,4 +27,4 @@ import "./style.css";
     alt="CV"
     class="md:w-56 md:h-56 w-32 h-32 absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
   />
-</section>
+</a>

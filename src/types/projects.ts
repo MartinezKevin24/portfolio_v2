@@ -12,16 +12,41 @@ type ProjectPreview = {
   external_url?: string;
 };
 
-type ProjectDetail = {
+export interface ProjectDetail {
+  slug: string;
   name: string;
-  description: { es: string; en: string };
-  image_desktop: string;
-  image_mobile: string;
-  tech_stack: string[];
+  icon: string;
   url: string;
-  role: { es: string; en: string };
-  images: string[];
-  highlights: { es: string[]; en: string[] };
-};
+  role: {
+    es: string;
+    en: string;
+  };
+  description: {
+    es: string;
+    en: string;
+  };
+  highlights: {
+    es: Highlight[];
+    en: Highlight[];
+  };
+  tech: { name: string; cssClass: string }[];
+  images: {
+    src: string;
+    alt: string;
+    isMobile?: boolean; 
+  }[];
+  galleryText?: {
+    es: string;
+    en: string;
+  };
+  gallery?: {
+    src: string;
+    alt: string;
+    caption?: {
+      es: string;
+      en: string;
+    };
+  }[];
+}
 
 export type { ProjectPreview, ProjectDetail };

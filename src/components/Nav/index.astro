@@ -1,15 +1,41 @@
 ---
 import { useTranslations } from "../../i18n/index";
 import type { Lang } from "../../i18n/index";
+import { curriculum } from "../../constants/curriculum";
 
 const lang = (Astro.currentLocale ?? "es") as Lang;
 const t = useTranslations(lang);
+const pathname = Astro.url.pathname;
+
+const homeHref = lang === "es" ? "/" : "/en";
+const projectsHref = "/projects";
+
+const isHome =
+  pathname === "/" || pathname === "/en" || pathname === "/en/";
+const isProjects =
+  pathname.startsWith("/projects") || pathname.startsWith("/en/projects");
+const isResume =
+  pathname.startsWith("/curriculum") || pathname.startsWith("/en/curriculum");
+
+const activeClass = "px-3 py-1 rounded-full transition-all duration-300 text-green-400";
+const inactiveClass =
+  "px-3 py-1 rounded-full transition-all duration-300 text-white/70 hover:text-white";
+
+const curriculumHref = curriculum[lang];
 ---
 
-<nav class="glass-card rounded-full px-4 py-1.5 inline-flex items-center gap-1 text-sm font-bold text-primary">
-  <a href={lang === "es" ? "/" : "/en"} class="px-3 py-1 rounded-full transition-all duration-300 text-primary/70  hover:text-primary">{t("nav.home")}</a>
-  <span class="text-primary/25 font-light">|</span>
-  <a href="/projects" class="px-3 py-1 rounded-full transition-all duration-300 text-primary/70  hover:text-primary">{t("nav.projects")}</a>
-  <span class="text-primary/25 font-light">|</span>
-  <a href="/curriculum" class="px-3 py-1 rounded-full transition-all duration-300 text-primary/70  hover:text-primary">{t("nav.resume")}</a>
+<nav
+  class="glass-card rounded-full px-4 py-1.5 hidden md:inline-flex items-center gap-1 text-sm font-bold"
+>
+  <a href={homeHref} class={isHome ? activeClass : inactiveClass}>
+    {t("nav.home")}
+  </a>
+  <span class="text-white/25 font-light">|</span>
+  <a href={projectsHref} class={isProjects ? activeClass : inactiveClass}>
+    {t("nav.projects")}
+  </a>
+  <span class="text-white/25 font-light">|</span>
+  <a href={curriculumHref} class={isResume ? activeClass : inactiveClass}>
+    {t("nav.resume")}
+  </a>
 </nav>
