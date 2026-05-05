@@ -21,19 +21,19 @@ const t = useTranslations(lang);
         {t("cta.highlight")}
       </span>
     </h1>
-    <div class="w-full relative">
-      <div class="w-full">
+    <div class="w-full space-y-1">
+      <div class="w-full flex justify-start">
         <img
           src={"/images/message.png"}
           alt="Call to Action"
-          class="w-fit md:h-[41px] h-12 object-contain"
+          class="h-12 w-auto max-w-[85%] object-contain md:h-[41px]"
         />
       </div>
-      <div class="w-full flex h-10 justify-end relative">
+      <div class="flex h-12 w-full justify-end md:h-10">
         <img
           src={"/images/response.png"}
           alt="Response message"
-          class="w-fit animation-message absolute opacity-0 md:h-10 h-12 object-contain"
+          class="animation-message h-12 w-auto max-w-[85%] object-contain opacity-0 md:h-10"
         />
       </div>
     </div>

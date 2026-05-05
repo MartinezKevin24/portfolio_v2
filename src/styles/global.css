@@ -13,6 +13,40 @@
 
 html {
   overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+:root {
+  view-transition-name: root;
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0); 
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+::view-transition-old(root) {
+  animation: slide-out-left 0.3s ease-in-out both;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: slide-in-left 0.3s ease-in-out both;
+  mix-blend-mode: normal;
 }
 
 #cursor-glow {

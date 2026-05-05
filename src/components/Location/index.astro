@@ -4,35 +4,37 @@ import party from "../../assets/memoji_party.webp";
 ---
 
 <section
-  class="w-full glass-card glass-card-map gap-4 h-full md:h-[318px] relative text-primary rounded-xl"
+  class="w-full h-full md:h-[318px] relative text-primary"
 >
-  <div class="relative h-full w-full overflow-clip map-container">
-    <div
-      class="md:absolute h-full relative md:left-12 md:w-[500px] md:h-[318px] opacity-70"
-    >
-      <img
-        src={"/images/map_desktop.png"}
-        alt="Location"
-        class="w-full h-full md:block hidden"
-      />
-      <img
-        src={"/images/map_mobile.png"}
-        alt="Location"
-        class="w-full absolute object-cover bottom-0 right-0 h-full md:hidden block"
-      />
-    </div>
-    <div
-      class="bg-green-300 h-10 w-10 rounded-full top-[18%] right-[52%] absolute border-2 border-green-100"
-    >
-      <img
-        src={party.src}
-        alt="Marker"
-        class="w-full h-full object-contain p-1"
-      />
+  <div class="glass-card glass-card-map gap-4 rounded-xl h-full w-full">
+    <div class="relative h-full w-full overflow-clip map-container">
+      <div
+        class="md:absolute h-full relative md:left-12 md:w-[500px] md:h-[318px] opacity-70"
+      >
+        <img
+          src={"/images/map_desktop.png"}
+          alt="Location"
+          class="w-full h-full md:block hidden"
+        />
+        <img
+          src={"/images/map_mobile.png"}
+          alt="Location"
+          class="w-full absolute object-cover bottom-0 right-0 h-full md:hidden block"
+        />
+      </div>
+      <div
+        class="bg-green-300 h-10 w-10 rounded-full top-[18%] right-[52%] absolute border-2 border-green-100"
+      >
+        <img
+          src={party.src}
+          alt="Marker"
+          class="w-full h-full object-contain p-1"
+        />
+      </div>
     </div>
   </div>
-  <div class="label-card">
-    <div class="glass-card relative">
+  <div class="label-card absolute top-0 left-0 max-w-[216px] max-h-[46px] w-full h-full pb-2 pr-2">
+    <div class="glass-card h-full w-full rounded-br-lg rounded-tl-xl flex items-center justify-center">
       <h2 class="text-[10px] md:text-xs text-primary font-bold">
         Cartagena, Colombia
       </h2>

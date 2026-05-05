@@ -5,6 +5,8 @@
 
 .glass-card-map {
   overflow: visible;
+  -webkit-clip-path: path("M0 46 L200 46 A16 16 0 0 0 216 30 L216 0 H1000 V1000 H0 Z");
+  clip-path: path("M0 46 L200 46 A16 16 0 0 0 216 30 L216 0 H1000 V1000 H0 Z");
 }
 
 .glass-card-map::before {
@@ -27,50 +29,12 @@
   opacity: 0.8;
 }
 
-.label-card {
-  background-color: var(--color-secondary);
-  height: 40px;
-  max-width: 100%;
-  width: min(11.25rem, 100%);
-  border-radius: 0 0 var(--border-radius) 0;
-  z-index: 1;
-  position: absolute;
-  border-top: 1px solid var(--color-secondary);
-  border-left: 1px solid var(--color-secondary);
-  top: -1px;
-  border-top-left-radius: 12px;
-  left: -1px;
-  border-right: 1px solid rgba(255, 255, 255, 0.308);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.308);
-  box-shadow: inset -6px -6px 9px -2px rgba(0, 0, 0, 0.5);
-
-  @media (max-width: 768px) {
-    width: fit-content;
-    padding-right: 8px;
-  }
-}
-
-.label-card > div {
-  height: calc(100% - 8px);
-  width: calc(100% - 8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom-right-radius: calc(var(--border-radius) - 8px);
-  border-top-left-radius: 12px;
-
-  @media (max-width: 768px) {
-    width: fit-content;
-    padding: 0 8px;
-  }
-}
-
-/* .label-card > div::before {
+.label-card::before {
   content: "";
   position: absolute;
   display: block;
   z-index: -1;
-  top: -20px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 150px;
@@ -78,4 +42,4 @@
   height: 60px;
   background-color: rgb(117, 52, 52);
   border-radius: 100%;
-} */
+}
