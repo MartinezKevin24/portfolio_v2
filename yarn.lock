@@ -979,6 +979,11 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/matter-js@^0.20.2":
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/@types/matter-js/-/matter-js-0.20.2.tgz#f24c6e9ffd779426336d3c966f7bd2e69dceee08"
+  integrity sha512-3PPKy3QxvZ89h9+wdBV2488I1JLVs7DEpIkPvgO8JC1mUdiVSO37ZIvVctOTD7hIq8OAL2gJ3ugGSuUip6DhCw==
+
 "@types/mdast@^4.0.0":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@types/mdast/-/mdast-4.0.4.tgz#7ccf72edd2f1aa7dd3437e180c64373585804dd6"
@@ -1855,6 +1860,11 @@ markdown-table@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-3.0.4.tgz#fe44d6d410ff9d6f2ea1797a3f60aa4d2b631c2a"
   integrity sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==
+
+matter-js@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/matter-js/-/matter-js-0.20.0.tgz#dc3c95c40ea5ef8937788a2770c3f97223b352ed"
+  integrity sha512-iC9fYR7zVT3HppNnsFsp9XOoQdQN2tUyfaKg4CHLH8bN+j6GT4Gw7IH2rP0tflAebrHFw730RR3DkVSZRX8hwA==
 
 mdast-util-definitions@^6.0.0:
   version "6.0.0"

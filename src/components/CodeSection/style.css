@@ -14,3 +14,41 @@
 .container-text-code {
   /* background: rgb(168, 219, 145); */
 }
+
+@keyframes spin-border {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* wrapper: muestra solo el borde (1.5px) via mask */
+.glow-border-wrap {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  padding: 3px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* div enorme que gira dentro del wrapper — el gradient crea el spotlight */
+.glow-border-spin {
+  position: absolute;
+  inset: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 60%,
+    #d6cc3b 75%,
+    #4fbb4f 83%,
+    transparent 100%
+  );
+  animation: spin-border 4s linear infinite;
+}
