@@ -7,6 +7,11 @@
   overflow: visible;
   -webkit-clip-path: path("M0 46 L200 46 A16 16 0 0 0 216 30 L216 0 H1000 V1000 H0 Z");
   clip-path: path("M0 46 L200 46 A16 16 0 0 0 216 30 L216 0 H1000 V1000 H0 Z");
+
+  @media (max-width: 768px) {
+    -webkit-clip-path: path("M0 46 L200 46 A16 16 0 0 0 216 30 L216 0 H1000 V1000 H0 Z");
+    clip-path: path("M0 32 L120 32 A8 8 0 0 0 126 24 L126 0 H1000 V1000 H0 Z");
+  }
 }
 
 .glass-card-map::before {
@@ -23,6 +28,14 @@
   transition: opacity 300ms ease;
   background-color: yellow;
   border-radius: 100%;
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+    filter: blur(50px);
+    bottom: 8px;
+    right: 8px;
+  }
 }
 
 .glass-card-map:hover::before {
