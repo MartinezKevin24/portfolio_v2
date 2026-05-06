@@ -1,9 +1,14 @@
-
 .highlight-card {
   background: rgba(255, 255, 255, 0.03);
   transition:
-    border-color 0.2s,
-    background 0.2s;
+    opacity var(--view-reveal-motion-duration, 0.55s)
+      var(--view-reveal-motion-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform var(--view-reveal-motion-duration, 0.55s)
+      var(--view-reveal-motion-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    border-color 0.2s ease,
+    background 0.2s ease;
+  transition-delay:
+    var(--view-reveal-delay, 0ms), var(--view-reveal-delay, 0ms), 0s, 0s;
   height: 220px;
   overflow: hidden;
 }

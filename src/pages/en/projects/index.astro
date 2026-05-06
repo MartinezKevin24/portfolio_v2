@@ -26,12 +26,18 @@ const base = lang === "en" ? "/en" : "";
     <div class="space-y-8 relative z-10">
       <h1
         class="text-5xl md:text-6xl font-medium text-primary leading-none tracking-tight"
+        data-view-reveal
+        style="--view-reveal-delay: 0ms"
       >
         {t("projects.title")}
       </h1>
     </div>
-		<section class="grid grid-cols-2 gap-6">
-      <div class="col-span-2">
+    <section class="grid grid-cols-2 gap-6">
+      <div
+        class="col-span-2"
+        data-view-reveal
+        style="--view-reveal-delay: 60ms"
+      >
         <ProjectPreviewCard
           project={projectsPreviews[0]}
           lang={lang}
@@ -39,8 +45,12 @@ const base = lang === "en" ? "/en" : "";
         />
       </div>
       {
-        resumeProjects?.map((project) => (
-          <div class="col-span-2 md:col-span-1">
+        resumeProjects?.map((project, i) => (
+          <div
+            class="col-span-2 md:col-span-1"
+            data-view-reveal
+            style={`--view-reveal-delay: ${120 + i * 70}ms`}
+          >
             <RelatedProjectCard
               href={`${base}/projects/${project.slug}`}
               customClass="shadow-[0_8px_32px_rgb(0_0_0/0.5)]"

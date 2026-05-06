@@ -23,7 +23,7 @@ html {
 
 @keyframes slide-out-left {
   from {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
   to {
     transform: translateX(-100vw);
@@ -47,6 +47,37 @@ html {
 ::view-transition-new(root) {
   animation: slide-in-left 0.3s ease-in-out both;
   mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+[data-view-reveal] {
+  --view-reveal-motion-duration: 0.55s;
+  --view-reveal-motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+  transform: translateY(2rem);
+  transition:
+    opacity var(--view-reveal-motion-duration) var(--view-reveal-motion-ease),
+    transform var(--view-reveal-motion-duration) var(--view-reveal-motion-ease);
+  transition-delay: var(--view-reveal-delay, 0ms);
+}
+
+[data-view-reveal].is-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-view-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 #cursor-glow {

@@ -30,12 +30,22 @@ const personJsonLd = {
 <Layout jsonLd={personJsonLd}>
   <section class="space-y-4 w-full">
     <div class="relative z-0 w-full grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="z-10 col-span-1 md:col-span-2">
+      <div
+        class="z-10 col-span-1 md:col-span-2"
+        data-view-reveal
+        style="--view-reveal-delay: 0ms"
+      >
         <Presentation />
       </div>
       <div class="grid grid-cols-2 md:grid-cols-1 gap-4 h-[180px] md:h-full">
-        <Resume />
-        <div class="order-3 min-w-0 md:order-1 md:hidden block">
+        <div data-view-reveal style="--view-reveal-delay: 80ms">
+          <Resume />
+        </div>
+        <div
+          class="order-3 min-w-0 md:order-1 md:hidden block"
+          data-view-reveal
+          style="--view-reveal-delay: 140ms"
+        >
           <Location />
         </div>
       </div>
@@ -43,23 +53,53 @@ const personJsonLd = {
     <div
       class="relative z-10 w-full grid max-md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:grid-cols-3 gap-4"
     >
-      <div class="order-3 min-w-0 md:order-1 hidden md:block">
+      <div
+        class="order-3 min-w-0 md:order-1 hidden md:block"
+        data-view-reveal
+        style="--view-reveal-delay: 0ms"
+      >
         <Location />
       </div>
       <section
         class="w-full min-w-0 order-2 col-span-2 md:col-span-1 md:order-2 min-h-[380px] md:min-h-full grid grid-cols-2 grid-rows-2 gap-4"
       >
-        <LinkedinBtn />
-        <GithubBtn />
-        <CodeSection />
+        <div
+          class="min-h-0 min-w-0 h-full"
+          data-view-reveal
+          style="--view-reveal-delay: 60ms"
+        >
+          <LinkedinBtn />
+        </div>
+        <div
+          class="min-h-0 min-w-0 h-full"
+          data-view-reveal
+          style="--view-reveal-delay: 120ms"
+        >
+          <GithubBtn />
+        </div>
+        <div
+          class="col-span-2 min-h-0 min-w-0"
+          data-view-reveal
+          style="--view-reveal-delay: 180ms"
+        >
+          <CodeSection />
+        </div>
       </section>
-      <div class="order-1 min-w-0 md:order-3 col-span-2 md:col-span-1">
+      <div
+        class="order-1 min-w-0 md:order-3 col-span-2 md:col-span-1"
+        data-view-reveal
+        style="--view-reveal-delay: 100ms"
+      >
         <CallToAction />
       </div>
     </div>
   </section>
   <section class="space-y-8">
-    <h1 class="text-5xl md:text-6xl w-fit font-medium text-primary">
+    <h1
+      class="text-5xl md:text-6xl w-fit font-medium text-primary"
+      data-view-reveal
+      style="--view-reveal-delay: 0ms"
+    >
       {t("project.title.section")}
     </h1>
     <Projects />

@@ -11,12 +11,14 @@ const lang = (Astro.currentLocale ?? "es") as Lang;
 
 <div class="grid grid-cols-1 gap-4 w-full">
   {
-    projectsPreviews.map((project: ProjectPreview) => (
-      <ProjectPreviewCard
-        project={project}
-        lang={lang}
-        techClassMap={TECH_STACK_PILL_CLASSES}
-      />
+    projectsPreviews.map((project: ProjectPreview, i: number) => (
+      <div data-view-reveal style={`--view-reveal-delay: ${i * 70}ms`}>
+        <ProjectPreviewCard
+          project={project}
+          lang={lang}
+          techClassMap={TECH_STACK_PILL_CLASSES}
+        />
+      </div>
     ))
   }
 </div>

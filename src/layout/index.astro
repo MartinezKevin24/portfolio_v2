@@ -126,5 +126,45 @@ const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         requestAnimationFrame(animate);
       })();
     </script>
+
+    <script is:inline>
+      (function () {
+        let observer = null;
+        function initViewReveal() {
+          if (observer) observer.disconnect();
+          observer = null;
+          const els = document.querySelectorAll("[data-view-reveal]");
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            els.forEach(function (el) {
+              el.classList.add("is-in-view");
+            });
+            return;
+          }
+          els.forEach(function (el) {
+            el.classList.remove("is-in-view");
+          });
+          observer = new IntersectionObserver(
+            function (entries) {
+              let staggerIndex = 0;
+              entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                if ((entry.target.getAttribute("style") || "").indexOf("--view-reveal-delay") !== -1) {
+                  entry.target.style.setProperty("--view-reveal-delay", staggerIndex * 110 + "ms");
+                  staggerIndex++;
+                }
+                entry.target.classList.add("is-in-view");
+                if (observer) observer.unobserve(entry.target);
+              });
+            },
+            { root: null, rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
+          );
+          els.forEach(function (el) {
+            if (observer) observer.observe(el);
+          });
+        }
+        initViewReveal();
+        document.addEventListener("astro:page-load", initViewReveal);
+      })();
+    </script>
   </body>
 </html>

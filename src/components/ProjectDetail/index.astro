@@ -34,7 +34,7 @@ const heroMobileImage = project.images.find((image) => image.isMobile) ?? null;
       >
         <!-- Left: content -->
         <div class="space-y-8">
-          <div class="flex items-center gap-3 flex-wrap">
+          <div class="flex items-center gap-3 flex-wrap" data-view-reveal>
             <div class="w-12 h-12 rounded-lg overflow-clip">
               <img
                 src={project.icon}
@@ -55,25 +55,31 @@ const heroMobileImage = project.images.find((image) => image.isMobile) ?? null;
           </div>
 
           <h1
+            data-view-reveal
             class="text-6xl md:text-7xl font-black text-primary leading-none tracking-tight"
           >
             {project.name}
           </h1>
 
-          <p class="text-primary/80 text-base leading-relaxed">
+          <p class="text-primary/80 text-base leading-relaxed" data-view-reveal>
             {project.description[lang]}
           </p>
 
           <div class="space-y-4">
-            <p
+            <h2
+              data-view-reveal
               class="text-xs font-bold text-primary uppercase tracking-[0.2em]"
             >
               {t("project.tech")}
-            </p>
+            </h2>
             <div class="flex flex-wrap gap-2">
               {
-                project.tech.map((tag) => (
-                  <span class={`tech-pill text-xs ${tag.cssClass}`}>
+                project.tech.map((tag, i) => (
+                  <span
+                    class={`tech-pill text-xs ${tag.cssClass}`}
+                    data-view-reveal
+                    style={`--view-reveal-delay: ${i * 100}ms`}
+                  >
                     {tag.name}
                   </span>
                 ))
@@ -83,7 +89,7 @@ const heroMobileImage = project.images.find((image) => image.isMobile) ?? null;
 
           {
             project.url && (
-              <div class="max-w-[150px]">
+              <div class="max-w-[150px]" data-view-reveal>
                 <Button
                   href={project.url}
                   target="_blank"
@@ -99,7 +105,10 @@ const heroMobileImage = project.images.find((image) => image.isMobile) ?? null;
         <!-- Right: preview image -->
         {
           project.images.length > 0 && (
-            <div class="rounded-xl shadow-2xl shadow-black/50 overflow-clip h-fit w-fit">
+            <div
+              class="rounded-xl shadow-2xl shadow-black/50 overflow-clip h-fit w-fit"
+              data-view-reveal
+            >
               <div class="relative md:h-[476px] h-full w-full flex items-start overflow-y-auto justify-center">
                 {heroMobileImage && (
                   <img
@@ -122,13 +131,17 @@ const heroMobileImage = project.images.find((image) => image.isMobile) ?? null;
 
     <!-- Highlights grid -->
     <div class="space-y-10 border-b border-white/10 pb-20">
-      <h2 class="text-4xl md:text-5xl font-black text-primary">
+      <h2 class="text-4xl md:text-5xl font-black text-primary" data-view-reveal>
         {t("project.highlights.title")}
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {
           project.highlights[lang].map((item, i) => (
-            <div class="highlight-card border border-white/10 rounded-xl p-5 flex flex-col gap-3">
+            <li
+              class="highlight-card border border-white/10 rounded-xl p-5 flex flex-col gap-3 min-w-0"
+              data-view-reveal
+              style={`--view-reveal-delay: ${i * 130}ms`}
+            >
               <span class="text-3xl font-black text-green-400/40 leading-none">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -140,10 +153,10 @@ const heroMobileImage = project.images.find((image) => image.isMobile) ?? null;
                   {item.description}
                 </p>
               </div>
-            </div>
+            </li>
           ))
         }
-      </div>
+      </ul>
     </div>
 
     <!-- Screenshots gallery -->
@@ -186,20 +199,22 @@ const heroMobileImage = project.images.find((image) => image.isMobile) ?? null;
       <p class="font-bold text-primary/50 text-base uppercase tracking-[0.2em]">
         {t("project.related")}
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {
-          related.map((relatedProject) => (
-            <RelatedProjectCard
+          related.map((relatedProject, i) => (
+            <li class="related-project-card" data-view-reveal style={`--view-reveal-delay: ${i * 100}ms`}>
+              <RelatedProjectCard
               href={`${base}/projects/${relatedProject.slug}`}
               name={relatedProject.name}
               icon={relatedProject.icon}
               role={relatedProject.role[lang]}
               description={relatedProject.description[lang]}
               readMoreLabel={t("project.readMore")}
-            />
+              />
+            </li>
           ))
         }
-      </div>
+      </ul>
     </div>
   </div>
 </div>
