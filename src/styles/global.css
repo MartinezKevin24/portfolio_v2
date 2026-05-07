@@ -181,6 +181,18 @@ body {
   border-color: rgba(38, 77, 228, 0.3);
 }
 
+.tech-astro {
+  color: #ff9a6c;
+  border-color: #ff5d01;
+  background: rgba(255, 93, 1, 0.15);
+}
+
+.tech-emailjs {
+  color: #fbb97a;
+  border-color: #f7923a;
+  background: rgba(247, 146, 58, 0.15);
+}
+
 .tech-default {
   color: #d1d5db;
   border-color: #9ca3af;

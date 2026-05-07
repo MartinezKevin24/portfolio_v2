@@ -318,6 +318,177 @@ export const projects: ProjectDetail[] = [
     ],
   },
   {
+    slug: "fiestero-pop",
+    name: "Fiestero Pop",
+    icon: "/images/projects/fiestero_pop/icon_fiesteropop.png",
+    url: "https://fiesteropop.com",
+    role: {
+      es: "Desarrollador Front-End & Diseñador UI/UX",
+      en: "Front-End Developer & UI/UX Designer",
+    },
+    description: {
+      es: "Landing page para una marca de cócteles en sachet. El proyecto abarcó desde el diseño completo en Figma —siguiendo el manual de marca con tipografía e ilustraciones de frutas— hasta la implementación con Astro, animaciones CSS complejas y una isla React para el formulario de contacto con EmailJS. El objetivo: transmitir una identidad visual vibrante que conecte con un público joven.",
+      en: "Landing page for a sachet cocktail brand. The project covered everything from full design in Figma — following the brand manual with custom typography and fruit illustrations — to implementation with Astro, complex CSS animations, and a React island for the contact form with EmailJS. The goal: convey a vibrant visual identity that connects with a young audience.",
+    },
+    highlights: {
+      es: [
+        {
+          title: "Diseño UI/UX desde Figma",
+          description:
+            "Diseño completo de la interfaz desde wireframes hasta implementación, alineado con el manual de marca: tipografía, paleta de colores e ilustraciones de frutas.",
+        },
+        {
+          title: "Animaciones CSS Complejas",
+          description:
+            "Animaciones personalizadas con CSS puro para ilustraciones de frutas y elementos de marca, creando una experiencia visual dinámica y diferenciadora.",
+        },
+        {
+          title: "Diseño Responsive",
+          description:
+            "Experiencia adaptada a todos los dispositivos con enfoque mobile-first, garantizando coherencia visual en cualquier pantalla.",
+        },
+        {
+          title: "SEO Técnico",
+          description:
+            "Metatags optimizados, sitemap y datos estructurados para garantizar visibilidad e indexación en buscadores.",
+        },
+        {
+          title: "Formulario con EmailJS",
+          description:
+            "Isla React con formulario de contacto integrado a EmailJS para envío directo sin necesidad de backend adicional.",
+        },
+        {
+          title: "Botón WhatsApp",
+          description:
+            "Integración de acceso directo a WhatsApp por petición del cliente para una comunicación más inmediata con el usuario.",
+        },
+        {
+          title: "Identidad Visual Web",
+          description:
+            "Aplicación de la identidad de marca — fuente, ilustraciones y paleta — para comunicar una estética festiva que atrae al público joven.",
+        },
+      ],
+      en: [
+        {
+          title: "UI/UX Design from Figma",
+          description:
+            "Full interface design from wireframes to implementation, aligned with the brand manual: typography, color palette, and fruit illustrations.",
+        },
+        {
+          title: "Complex CSS Animations",
+          description:
+            "Custom animations built with pure CSS for fruit illustrations and brand elements, creating a dynamic and distinctive visual experience.",
+        },
+        {
+          title: "Responsive Design",
+          description:
+            "Mobile-first responsive experience ensuring visual consistency across all screen sizes.",
+        },
+        {
+          title: "Technical SEO",
+          description:
+            "Optimized metatags, sitemap, and structured data to ensure proper indexing and public visibility in search engines.",
+        },
+        {
+          title: "Contact Form with EmailJS",
+          description:
+            "React island with a contact form integrated with EmailJS for direct email delivery without an additional backend.",
+        },
+        {
+          title: "WhatsApp Button",
+          description:
+            "WhatsApp shortcut integration requested by the client to enable faster and more direct communication with users.",
+        },
+        {
+          title: "Web Visual Identity",
+          description:
+            "Applied brand identity — font, illustrations, and palette — to convey a festive aesthetic that resonates with a young audience.",
+        },
+      ],
+    },
+    tech: [
+      { name: "Astro", cssClass: "tech-astro" },
+      { name: "TypeScript", cssClass: "tech-typescript" },
+      { name: "CSS", cssClass: "tech-css" },
+      { name: "React", cssClass: "tech-react" },
+      { name: "EmailJS", cssClass: "tech-emailjs" },
+    ],
+    images: [
+      {
+        src: "/images/projects/fiestero_pop/home_desktop.png",
+        alt: "Fiestero Pop homepage desktop",
+        isMobile: false,
+      },
+      {
+        src: "/images/projects/fiestero_pop/home_mobile.png",
+        alt: "Fiestero Pop homepage mobile",
+        isMobile: true,
+      },
+    ],
+    galleryText: {
+      es: "Responsable del diseño y desarrollo completo, construyendo una identidad visual web coherente con la marca. Cada decisión —desde las animaciones hasta el SEO— estuvo orientada a conectar con el público objetivo y posicionar el producto.",
+      en: "Responsible for the full design and development, building a web visual identity consistent with the brand. Every decision — from animations to SEO — was aimed at connecting with the target audience and positioning the product.",
+    },
+    gallery: [
+      {
+        src: "/images/projects/fiestero_pop/design_figma.png",
+        alt: "Fiestero Pop Figma design workspace",
+        caption: {
+          es: "Proceso de diseño completo en Figma: propuestas desktop y mobile, componentes reutilizables y prototipos, siguiendo el manual de marca con tipografía e ilustraciones de frutas propias de Fiestero Pop.",
+          en: "Full design process in Figma: desktop and mobile proposals, reusable components, and prototypes — following the brand manual with Fiestero Pop's custom typography and fruit illustrations.",
+        },
+      },
+      {
+        src: "/images/projects/fiestero_pop/home_desktop.png",
+        alt: "Fiestero Pop homepage desktop",
+        caption: {
+          es: "Hero principal con tipografía de la marca, ilustraciones animadas de frutas y fondo oscuro que transmite la identidad festiva y diferenciadora de Fiestero Pop.",
+          en: "Main hero with brand typography, animated fruit illustrations, and dark background that conveys the festive and distinctive identity of Fiestero Pop.",
+        },
+      },
+      {
+        src: "/images/projects/fiestero_pop/slide_sabores.png",
+        alt: "Fiestero Pop flavors slide section",
+        caption: {
+          es: "Sección hero de sabores con animaciones CSS y producto destacado: una presentación visual de alto impacto que invita al usuario a explorar el catálogo.",
+          en: "Flavors hero section with CSS animations and featured product: a high-impact visual presentation that invites users to explore the catalog.",
+        },
+      },
+      {
+        src: "/images/projects/fiestero_pop/sabores.png",
+        alt: "Fiestero Pop all flavors page",
+        caption: {
+          es: "Listado completo de sabores con tarjetas por producto y llamada a la acción directa, optimizando la conversión desde la exploración del catálogo.",
+          en: "Full flavor catalog with per-product cards and a direct call to action, optimizing conversion from catalog browsing.",
+        },
+      },
+      {
+        src: "/images/projects/fiestero_pop/detalle_sabores.png",
+        alt: "Fiestero Pop flavor detail page",
+        caption: {
+          es: "Página de detalle de sabor con imagen del producto, descripción sensorial y llamada a la acción, diseñada para enamorar al usuario antes del contacto.",
+          en: "Flavor detail page with product image, sensory description, and call to action — designed to win the user over before they reach out.",
+        },
+      },
+      {
+        src: "/images/projects/fiestero_pop/escensia.png",
+        alt: "Fiestero Pop brand essence section",
+        caption: {
+          es: "Sección de identidad de marca que comunica el concepto de Fiestero Pop: más que un cóctel, un estilo de vida. Diseñada para generar conexión emocional.",
+          en: "Brand identity section communicating Fiestero Pop's concept: more than a cocktail, a lifestyle. Designed to build emotional connection.",
+        },
+      },
+      {
+        src: "/images/projects/fiestero_pop/contact_form.png",
+        alt: "Fiestero Pop contact page",
+        caption: {
+          es: "Página de contacto con formulario integrado vía EmailJS y acceso directo a redes sociales y WhatsApp, reduciendo la fricción para que el usuario se comunique.",
+          en: "Contact page with EmailJS-integrated form and direct access to social media and WhatsApp — reducing friction for users to get in touch.",
+        },
+      },
+    ],
+  },
+  {
     slug: "monitoreo-hidrico",
     name: "Monitoreo Hídrico",
     icon: "/images/projects/monitoreo_hidrico/monitoreo_icon.png",

@@ -11,6 +11,8 @@ export const TECH_STACK_PILL_CLASSES: Record<string, string> = {
   "Node.js": "tech-node",
   Recoil: "tech-recoil",
   CSS: "tech-css",
+  Astro: "tech-astro",
+  EmailJS: "tech-emailjs",
 };
 
 export function getTechPillClass(tech: string): string {
